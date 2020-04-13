@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1586785589 source:c:\users\oliver\desktop\projekat c++\main.cpp
+	<iostream>
+	"datum.hpp"
+	"mesto.hpp"
+	"arena.hpp"
+	"igrac.hpp"
+	"tim.hpp"
+	"trener.hpp"
+	"tabela.hpp"
+	"kolo.hpp"
+	"utakmica.hpp"
+	"gradodrzavanja.hpp"
+	"regularnideo.hpp"
+	"toposam.hpp"
+	"finalfour.hpp"
+	"sezona.hpp"
+
+1586718248 c:\users\oliver\desktop\projekat c++\datum.hpp
+
+1586783625 c:\users\oliver\desktop\projekat c++\mesto.hpp
+
+1586785602 c:\users\oliver\desktop\projekat c++\arena.hpp
+	"mesto.hpp"
+
+1586785475 c:\users\oliver\desktop\projekat c++\igrac.hpp
+	"mesto.hpp"
+	"datum.hpp"
+
+1586717422 c:\users\oliver\desktop\projekat c++\tim.hpp
+	"igrac.hpp"
+	"datum.hpp"
+	"mesto.hpp"
+	"arena.hpp"
+	"trener.hpp"
+
+1586785475 c:\users\oliver\desktop\projekat c++\trener.hpp
+	"datum.hpp"
+	"mesto.hpp"
+
+1586718746 c:\users\oliver\desktop\projekat c++\tabela.hpp
+	"tim.hpp"
+
+1586109416 c:\users\oliver\desktop\projekat c++\kolo.hpp
+	"datum.hpp"
+	"utakmica.hpp"
+
+1586716394 c:\users\oliver\desktop\projekat c++\utakmica.hpp
+	"datum.hpp"
+	"tim.hpp"
+
+1586109753 c:\users\oliver\desktop\projekat c++\gradodrzavanja.hpp
+	"mesto.hpp"
+	"arena.hpp"
+
+1586109978 c:\users\oliver\desktop\projekat c++\regularnideo.hpp
+	"tabela.hpp"
+	"kolo.hpp"
+
+1586110793 c:\users\oliver\desktop\projekat c++\toposam.hpp
+	"tabela.hpp"
+
+1586110793 c:\users\oliver\desktop\projekat c++\finalfour.hpp
+	"toposam.hpp"
+
+1586110917 c:\users\oliver\desktop\projekat c++\sezona.hpp
+	"regularnideo.hpp"
+	"toposam.hpp"
+	"finalfour.hpp"
+
