@@ -1,0 +1,32 @@
+Fenerbahce
+Beko, 1.1.1913., Turska, Istanbul, 1
+
+Arena
+Ulker Sports Arena, Turska, Istanbul, 13059
+
+Trenutna sezona
+25, 5, 50
+
+Trener
+Zeljko, Obradovic, 9.3.1960., SFRJ, Cacak
+
+Igraci
+Egehan, Arna, 18, 203, bek, 5.1..1997., Turska, Kadikoj
+Tarik, Biberovic, 13, 200, bek, 28.1.2001., Bosna i Hercegovina, /
+Luigi, Datome, 70, 202, krilo, 27.11.1987., Italija, Montebelluna
+Ahmet, Duran, 9, 206, centar, 28.1.1999., Turska, Afyonkarahisar
+Ahmet, Duverioglu, 44, 209, centar, 4.3.1993., Turska, /
+Tyler, Ennis, 11, 189, plejmejker, 24.8.1994., SAD, Brampton
+Erick, Green, 1, 190, plejmejker/bek, 9.5.1991., SAD, Inglewood
+Marko, Guduric, 23, 196, bek, 8.3.1995., SRJ, Priboj
+Sinan, Guler, 32, 192, bek, 8.11.1983., Turska, Istanbul
+Baris, Hersek, 5, 208, krilo, 26.3.1988., Turska, Kirklareli
+Nikola, Kalinic, 12, 202, krilni_centar, 8.11.1991., SFRJ, /
+Joffrey, Lauvergne, 77, 211, krilni_centar/centar, 30.10.1991., Francuska, Mulhouse
+Melih, Mahmutoglu, 10, 192, bek, 12.5.1990., Turska, Kadikoy
+Nicolo, Melli, 4, 204, krilo, 26.1.1991., Italija, Reggio Emilia
+Ali, Muhammed, 35, 178, plejmejker, 10.4.1983., SAD, Chicago
+Ekrem, Sancakli, 8, 196, krilo, 26.4.2001., Turska, /
+Kostas, Sloukas, 16, 190, plejmejker, 15.1.1990., Grcka, Thessaloniki
+Ergi, Tirpanci, 3, 200, krilni_centar, 1.1.2000., Turska, /
+Jan, Vesely, 24, 213, centar, 24.4.1990., Ceska, Ostrava
