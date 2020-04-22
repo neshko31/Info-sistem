@@ -21,4 +21,6 @@ void ispisArena (const Arena &a)
     ispisMesto(a.mesot);
     cout << "Broj mesta: " << a.brojmesta << endl;
 }
+
+///ispis arene i sama klasa
 #endif // ARENA_HPP_INCLUDED

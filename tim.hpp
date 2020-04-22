@@ -9,11 +9,15 @@
 #include "arena.hpp"
 #include "trener.hpp"
 
+///klasa koja objedinjuje igrace, trenera i daje ostale info o timu
+///imamo metodu za ispis svega
+///funkcija za ispis samo naziva tima
+///funkcija za ispis koja se koristi u tabeli
+
 class Tim
 {
 private:
     string nazivtima;
-    string sponzor;
     Datum osnovano;
     Mesto mestasce;
     string trofeji;
@@ -28,29 +32,39 @@ private:
     Trener tren;
     Igrac igraci[BROJ_IGRACA];
 public:
-    friend void ispisTima (const Tim &timm);
+    void ispisTima ()
+    {
+        cout << "Naziv tima: " << nazivtima << endl;
+        cout << "Datum osnivanja: ";
+        ispisDatuma (osnovano);
+        cout << endl;
+        cout << "Trofeji u ovom takmicenju: " << trofeji << endl;
+        cout << "Arena: ";
+        ispisArena(ar);
+        cout << "Pobede: " << pobede << " / Pobede nakon produzetaka: " << pobedeprod <<" / Porazi: " << porazi << " / Porazi nakon produzetaka: " << poraziprod <<endl;
+        cout << "Bodovi u trenutnoj sezoni: " << bodovi << endl;
+        cout << "Ukupno datih poena: " << poenidati << " / Ukupno primljenih poena: " << poeniprimljeni << endl;
+        cout << "Trener: ";
+        tren.ispisTrenera ();
+        for (int i=0; i<BROJ_IGRACA; i++)
+        {
+            cout << "Igrac: " << endl;
+            ispisIgraca(igraci[i]);
+            cout << endl;
+        }
+    }
+    friend void ispisNazivaTima (const Tim &ti);
+    friend void ispisTabelaTim (const Tim &tt);
 };
 
-void ispisTima (const Tim &timm)
+void ispisNazivaTima (const Tim &ti)
 {
-    cout << "Naziv tima: " << timm.nazivtima << endl;
-    cout << "Sponzori tima: " << timm.sponzor << endl;
-    cout << "Datum osnivanja: ";
-    ispisDatuma (timm.osnovano);
-    cout << "Trofeji: " << timm.trofeji << endl;
-    cout << "Arena: ";
-    ispisArena(timm.ar);
-    cout << "Pobede: " << timm.pobede << " / Pobede nakon produzetaka: " << timm.pobedeprod <<" / Porazi: " << timm.porazi << " / Porazi nakon produzetaka: " << timm.poraziprod <<endl;
-    cout << "Bodovi u trenutnoj sezoni: " << timm.bodovi << endl;
-    cout << "Ukupno datih poena: " << timm.poenidati << " / Ukupno primljenih poena: " << timm.poeniprimljeni << endl;
-    cout << "Trener: ";
-    ispisTrenera(timm.tren);
-    for (int i=0; i<BROJ_IGRACA; i++)
-    {
-        cout << "Igrac: " << endl;
-        ispisIgraca(timm.igraci[i]);
-        cout << endl;
-    }
+    cout << ti.nazivtima;
+}
+
+void ispisTabelaTim (const Tim &tt)
+{
+    cout << tt.nazivtima << "\t" << tt.pobede << "\t" << tt.pobedeprod << "\t" << tt.porazi << "\t" << tt.poraziprod << "\t" << tt.poenidati << ":" << tt.poeniprimljeni << "\t" << tt.bodovi;
 }
 
 #endif // TIM_HPP_INCLUDED

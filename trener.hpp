@@ -3,26 +3,25 @@
 
 #include "datum.hpp"
 #include "mesto.hpp"
+#include "trenerdatum.hpp"
 
-class Trener
+class Trener : public TrenerDatum
 {
 private:
     string ime;
     string prezime;
-    Datum dat;
     Mesto mestasce;
 public:
-    Trener (string imq="Nenad", string prezq="Lukic", int d2q=1, int m2q=1, int g2q=1, string drq="da", string naq="dada") : ime(imq), prezime(prezq), dat (d2q, m2q, g2q), mestasce(drq, naq) {};
-    friend void ispisTrenera (const Trener &t);
+    Trener (int d2q=1, int m2q=1, int g2q=1, string imq="Nenad", string prezq="Lukic", string drq="da", string naq="dada") : TrenerDatum (d2q, m2q, g2q), ime(imq), prezime(prezq), mestasce(drq, naq) {};
+    void ispisTrenera ()
+    {
+        cout << "Ime: " << ime << "Prezime: " << prezime << endl;
+        TrenerDatum::datumTrenera();
+        ispisMesto(mestasce);
+    }
+
 };
 
-void ispisTrenera (const Trener &t)
-{
-    cout << "Ime: " << t.ime << endl << "Prezime: " << t.prezime << endl;
-    cout << "Datum rodjenja: ";
-    ispisDatuma(t.dat);
-    cout << "Drzava i mesto rodjenja: ";
-    ispisMesto(t.mestasce);
-}
+///osnovne info o treneru
 
 #endif // TRENER_HPP_INCLUDED

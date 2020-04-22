@@ -60,7 +60,7 @@ void citajTxt(string nazivFajla)
 }
 int main()
 {
-    string nasFajl = "fenerbahce 18.19.txt";
+    ///string nasFajl = "real madrid 18.19.txt";
 
     ///system("dir");
    /* cout<<"Unesite tekst koji hocete da upisete u fajl:"<<endl;
@@ -70,7 +70,7 @@ int main()
     pisiTxt(nasFajl, ulaz);
 
     cout<<"U fajlu pise: ";*/
-    citajTxt(nasFajl);
+///    citajTxt(nasFajl);
 
     return 0;
 }

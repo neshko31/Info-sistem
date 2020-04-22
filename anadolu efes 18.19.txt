@@ -1,0 +1,13 @@
+Anadolu Efes
+1.1.1976., Turska, Istanbul, 0
+
+Arena
+Sinan Erdem Arena, Turska, Istanbul, 16000
+
+Trenutna sezona
+20, 0, 10, 0, 2562, 2406, 40
+
+Trener
+Ergin, Ataman, 7.1.1966., Turska, Istanbul
+
+Igraci

@@ -3,7 +3,7 @@
 
 class Mesto
 {
-private:
+protected:
     string drzava;
     string naziv;
 public:
@@ -20,4 +20,5 @@ void ispisMesto (const Mesto &mestice)
     cout << mestice.drzava << ", "<< mestice.naziv << endl;
 }
 
+///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama
 #endif // MESTO_HPP_INCLUDED

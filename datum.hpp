@@ -18,7 +18,8 @@ public:
 
 void ispisDatuma (const Datum &datumcic)
 {
-    cout <<datumcic.dan<<"."<<datumcic.mesec<<"."<<datumcic.godina<<"."<<endl;
+    cout <<datumcic.dan<<"."<<datumcic.mesec<<"."<<datumcic.godina<<".";
 }
 
+///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama
 #endif // DATUM_HPP_INCLUDED

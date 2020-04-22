@@ -13,7 +13,7 @@ private:
     Tabela tabelarno;
     Kolo kola[BROJ_KOLA];
 public:
-    ///ovde je ispis ovih svih kola kao i ispis same tabele, poziva se ispis tabele kao i sort
+    ///ovde je ispis ovih svih kola kao i ispis same tabele
 };
 
 #endif // REGULARNIDEO_HPP_INCLUDED
