@@ -4,13 +4,12 @@
 #include "datum.hpp"
 #include "tim.hpp"
 
-///broj koristimo samo kao numeraciju da se zna koju tekmu on treba da gleda u fajlu
+///broj koristimo samo kao numeraciju da se zna koju tekmu on treba da gleda u fajlu, zapravo ne treba ovo
 ///ako ne valja ova ideja slobodno odgovorite :)
 
 class Utakmica
 {
 private:
-    int broj;
     Tim tiim1;
     Tim tiim2;
     Datum dati;
@@ -35,5 +34,14 @@ void ispisUtakmica (const Utakmica &ut)
     cout << " " ;
     cout << ut.brpojen2;
     cout << endl;
+    if (ut.brpojen1>ut.brpojen2)
+    {
+        cout << "Pobednik: ";
+        ispisNazivaTima(ut.tiim1);
+    }
+    else{
+    cout << "Pobednik: ";
+        ispisNazivaTima(ut.tiim2);
+    }
 }
 #endif // UTAKMICA_HPP_INCLUDED
