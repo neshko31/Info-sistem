@@ -7,10 +7,19 @@ protected:
     string drzava;
     string naziv;
 public:
+    Mesto(){
+        drzava="evropa";
+        naziv="grad u evropi";
+    }
     Mesto (string drz="evropa", string naz="grad u evropi")
     {
         drzava=drz;
         naziv=naz;
+    }
+    Mesto (const Mesto &me)
+    {
+        drzava=me.drzava;
+        naziv=me.naziv;
     }
     friend void ispisMesto (const Mesto &mestice);
 };

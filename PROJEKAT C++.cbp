@@ -60,9 +60,9 @@
 		<Unit filename="sezona.hpp" />
 		<Unit filename="tabela.hpp" />
 		<Unit filename="tim.hpp" />
+		<Unit filename="timucinak.hpp" />
 		<Unit filename="toposam.hpp" />
 		<Unit filename="trener.hpp" />
-		<Unit filename="trenerdatum.hpp" />
 		<Unit filename="utakmica.hpp" />
 		<Unit filename="zalgiris 18.19.txt" />
 		<Extensions>

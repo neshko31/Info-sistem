@@ -12,7 +12,8 @@ private:
     string prezime;
     Mesto mestasce;
 public:
-    Trener (int d2q=1, int m2q=1, int g2q=1, string imq="Nenad", string prezq="Lukic", string drq="da", string naq="dada") : TrenerDatum (d2q, m2q, g2q), ime(imq), prezime(prezq), mestasce(drq, naq) {};
+    ///ovo cu doraditi kasnije
+    ///Trener (int d2q=1, int m2q=1, int g2q=1, string imq="Nenad", string prezq="Lukic", string drq="da", string naq="dada") : TrenerDatum (d2q, m2q, g2q), ime(imq), prezime(prezq), mestasce(drq, naq) {};
     void ispisTrenera ()
     {
         cout << "Ime: " << ime << "Prezime: " << prezime << endl;

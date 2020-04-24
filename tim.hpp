@@ -22,16 +22,10 @@ private:
     Mesto mestasce;
     string trofeji;
     Arena ar;
-    int pobede;
-    int pobedeprod;
-    int porazi;
-    int poraziprod;
-    int bodovi;
-    int poenidati;
-    int poeniprimljeni;
     Trener tren;
     Igrac igraci[BROJ_IGRACA];
 public:
+
     void ispisTima ()
     {
         cout << "Naziv tima: " << nazivtima << endl;

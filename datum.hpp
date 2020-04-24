@@ -8,10 +8,22 @@ private:
     int mesec;
     int godina;
 public:
+    Datum ()
+    {
+        dan=1;
+        mesec=1;
+        godina=1;
+    }
     Datum (int d=1, int m=1, int g=1){
         dan=d;
         mesec=m;
         godina=g;
+    }
+    Datum (const Datum&d)
+    {
+        dan=d.dan;
+        mesec=d.mesec;
+        godina=d.godina;
     }
     friend void ispisDatuma (const Datum &datumcic);
 };
