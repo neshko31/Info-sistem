@@ -43,7 +43,6 @@
 		<Unit filename="datum.hpp" />
 		<Unit filename="fenerbahce 18.19.txt" />
 		<Unit filename="finalfour.hpp" />
-		<Unit filename="gradodrzavanja.hpp" />
 		<Unit filename="gran canaria 18.19.txt" />
 		<Unit filename="igrac.hpp" />
 		<Unit filename="khimki 18.19.txt" />
@@ -54,6 +53,7 @@
 		<Unit filename="olimpia milano 18.19.txt" />
 		<Unit filename="olympiakos 18.19.txt" />
 		<Unit filename="panathinaikos 18.19.txt" />
+		<Unit filename="pozicijautimu.hpp" />
 		<Unit filename="real madrid 18.19.txt" />
 		<Unit filename="regularnideo.hpp" />
 		<Unit filename="sezona 18.19.txt" />

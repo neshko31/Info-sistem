@@ -3,12 +3,14 @@
 
 #include "toposam.hpp"
 #include "utakmica.hpp"
+#include "arena.hpp"
 
 class FinalFour
 {
 private:
     Tim cetirkomada [4];
     Utakmica tekmice[3];
+    Arena aren;
 public:
     ///ovde su dva polu i jedno finale
     ///fakticki samo ispis za 3 tekme
@@ -19,6 +21,8 @@ public:
 void ispisFinalFour (const FinalFour& ff)
 {
     int i;
+    cout << "Utakmice se igraju u: " << endl;
+    ispisArena(ff.aren);
     cout << "U ovosezonskom izdanju Final Four igrace: ";
     for (i=0; i<4; i++)
     {

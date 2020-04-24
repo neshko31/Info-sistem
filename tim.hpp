@@ -8,13 +8,14 @@
 #include "mesto.hpp"
 #include "arena.hpp"
 #include "trener.hpp"
+#include "timucinak.hpp"
 
 ///klasa koja objedinjuje igrace, trenera i daje ostale info o timu
 ///imamo metodu za ispis svega
 ///funkcija za ispis samo naziva tima
 ///funkcija za ispis koja se koristi u tabeli
 
-class Tim
+class Tim: public TimUcinak
 {
 private:
     string nazivtima;
@@ -43,7 +44,7 @@ public:
         for (int i=0; i<BROJ_IGRACA; i++)
         {
             cout << "Igrac: " << endl;
-            ispisIgraca(igraci[i]);
+            igraci[i].ispisIgraca();
             cout << endl;
         }
     }
