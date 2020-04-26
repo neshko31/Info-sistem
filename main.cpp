@@ -12,7 +12,6 @@ using namespace std;
 #include "tabela.hpp"
 #include "kolo.hpp"
 #include "utakmica.hpp"
-#include "gradodrzavanja.hpp"
 #include "regularnideo.hpp"
 #include "toposam.hpp"
 #include "finalfour.hpp"
@@ -72,5 +71,9 @@ int main()
     cout<<"U fajlu pise: ";*/
 ///    citajTxt(nasFajl);
 
+
+///ovako nesto se moze koristi za upis u odredjene fajlove, u ovom slucaju timske fajlove
+Tim t1 ("a", 1, 1, 1, "a", "a", "aa", 1, "a", "a", 1, 1, 1, "a", "a");
+t1.pisiTxt13("khimki 18.19.txt", "lalalala");
     return 0;
 }

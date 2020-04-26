@@ -20,20 +20,19 @@ class Tim: public TimUcinak
 private:
     string nazivtima;
     Datum osnovano;
-    Mesto mestasce;
-    string trofeji;
     Arena ar;
     Trener tren;
-    Igrac igraci[BROJ_IGRACA];
-public:
 
+    ///ovo ostaje ovakvo dok se ne odrade vektori
+    ///Igrac igraci[BROJ_IGRACA];
+public:
+    Tim (string nt, int d2, int m, int g, string na, string da, string naa, int bra, string a, string b,int a1, int b2, int c2, string d, string n): TimUcinak(0, 0, 0, 0,0, 0, 0), nazivtima(nt),osnovano(d2, m, g), ar(na, da, naa, bra),tren(a, b, a1, b2, c2, d, n) {};
     void ispisTima ()
     {
         cout << "Naziv tima: " << nazivtima << endl;
         cout << "Datum osnivanja: ";
         ispisDatuma (osnovano);
         cout << endl;
-        cout << "Trofeji u ovom takmicenju: " << trofeji << endl;
         cout << "Arena: ";
         ispisArena(ar);
         cout << "Pobede: " << pobede << " / Pobede nakon produzetaka: " << pobedeprod <<" / Porazi: " << porazi << " / Porazi nakon produzetaka: " << poraziprod <<endl;
@@ -41,13 +40,38 @@ public:
         cout << "Ukupno datih poena: " << poenidati << " / Ukupno primljenih poena: " << poeniprimljeni << endl;
         cout << "Trener: ";
         tren.ispisTrenera ();
-        for (int i=0; i<BROJ_IGRACA; i++)
+
+
+
+        /*for (int i=0; i<BROJ_IGRACA; i++)
         {
             cout << "Igrac: " << endl;
             igraci[i].ispisIgraca();
             cout << endl;
-        }
+        }*/
+
+
     }
+
+
+    void pisiTxt13(string nazivFajla, string tekst)
+{
+    /// fajl je sada objekat klase ofstream
+    ofstream fajl;
+
+    /// koristimo metodu open za otvaranja fajla
+    /// kao parametar prosledjujemo naziv fajla i njegovu ekstenziju
+    fajl.open (nazivFajla);
+
+    /// pisanje vrsimo tako sto umesto cout pisemo naziv fajla
+    /// koristimo operator <<
+    fajl << tekst << endl;
+
+    /// na kraju zatvaramo fajl
+    fajl.close();
+}
+
+
     friend void ispisNazivaTima (const Tim &ti);
     friend void ispisTabelaTim (const Tim &tt);
 };
