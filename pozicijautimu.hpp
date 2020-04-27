@@ -20,6 +20,7 @@ public:
         cout << endl;
         ispisMesto(mestasce);
     }
+
 };
 
 #endif // POZICIJAUTIMU_HPP_INCLUDED

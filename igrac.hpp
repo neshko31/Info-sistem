@@ -1,6 +1,8 @@
 #ifndef IGRAC_HPP_INCLUDED
 #define IGRAC_HPP_INCLUDED
 
+///ovde imam drugi primerak metode, neki pokusaj
+
 using namespace std;
 
 enum Positions {plejmejker, bek, krilo, krilni_centar, centar};
@@ -15,20 +17,25 @@ private:
     int dres;
     int visina;
     Positions pozicije;
+    int zarada;
 public:
     ///ovi postoje ako zatrebaju
     ///Igrac(string imq="Nenad", string prezq="Lukic", int d2=1, int m2=1, int g2=1, string dr="da", string naz="dada", int dre=31, int vis2=196, Positions poz=centar) : ime(imq), prezime(prezq), dres(dre), visina(vis2), pozicije(poz), datigr (d2, m2, g2), mestoigr(dr, naz) {};
     ///Igrac ():Osoba("ime", "prezime", 1, 1, 1, "neshto", "opet neshto"), dres()
 
-    Igrac (string i, string p, int a, int b, int c, string d, string n, int dr, int vis, Positions poz): Osoba(i, p, a, b, c, d, n), dres(dr), visina(vis), pozicije(poz) {};
+    Igrac (string i, string p, int a, int b, int c, string d, string n, int dr, int vis, Positions poz, int za): Osoba(i, p, a, b, c, d, n), dres(dr), visina(vis), pozicije(poz), zarada(za) {};
+
 
     void ispisIgraca ()
     {
         Osoba::ispisPozicijaUTimu();
         cout << "Broj na dresu: " << dres << endl;
         cout << "Visina u cm: " << visina << endl;
-        cout << "Pozicije ovog igrac: " << pozicije << endl;
+        cout << "Pozicije ovog igraca: " << pozicije << endl;
+        cout << "Bruto zarada u evrima: " << zarada << "Neto zarada: " << zarada-(20*zarada/100) << endl;
     }
+
+
 };
 /*friend void ispisIgraca (const Igrac &i);
 void ispisIgraca (const Igrac &i)

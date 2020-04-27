@@ -73,7 +73,7 @@ int main()
 
 
 ///ovako nesto se moze koristi za upis u odredjene fajlove, u ovom slucaju timske fajlove
-Tim t1 ("a", 1, 1, 1, "a", "a", "aa", 1, "a", "a", 1, 1, 1, "a", "a");
-t1.pisiTxt13("khimki 18.19.txt", "lalalala");
+/*Tim t1 ("a", 1, 1, 1, "a", "a", "aa", 1, "a", "a", 1, 1, 1, "a", "a");
+t1.pisiTxt13("khimki 18.19.txt", "lalalala");*/
     return 0;
 }

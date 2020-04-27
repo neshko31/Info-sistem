@@ -7,6 +7,10 @@
 
 ///evo ga i funkcija za kola da vidimo mi to
 ///vec se nazire da je najveci problem ovog projekta sama baza podataka
+///ovde ide dodela za igraca kola i racunanje ko ima najvise tih igraca, pa se proglasava igracem regularnog dela
+///ili samo za kompletno po proseku indeksa korsinosti, pa po svakom timu se odredi igrac i od tih se uzimaju najbolji iz svakog tima
+///nakon sto imamo sve iz svih timova uzimamo najbolje i opet trazimo najboljeg i time proglasavamo najboljeg igraca
+///slican sistem ide i za final four
 
 class Kolo
 {

@@ -1,9 +1,11 @@
 #ifndef MESTO_HPP_INCLUDED
 #define MESTO_HPP_INCLUDED
 
+///ovde imamo prvi primerak metode
+
 class Mesto
 {
-protected:
+private:
     string drzava;
     string naziv;
 public:
@@ -20,6 +22,13 @@ public:
     {
         drzava=me.drzava;
         naziv=me.naziv;
+    }
+    void zameniNazivmesto ()
+    {
+        if (naziv=="/")
+        {
+            naziv="nema informacija";
+        }
     }
     friend void ispisMesto (const Mesto &mestice);
 };

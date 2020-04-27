@@ -3,6 +3,9 @@
 
 #define BROJ_IGRACA 30
 
+///ovde jos jedan primerak, racunamo proseke nekih stvari
+///ovi proseci ce biti kao komentar dokle god ne nadjem nacin da ubacim igrace u konstruktor
+
 #include "igrac.hpp"
 #include "datum.hpp"
 #include "mesto.hpp"
@@ -49,11 +52,33 @@ public:
             igraci[i].ispisIgraca();
             cout << endl;
         }*/
-
-
     }
 
+    ///ovo su te kao neke metode
+    /*void prosekstarosti ()
+    {
+        int godine=0;
+        int i;
+        for (i=0; i<BROJ_IGRACA; i++)
+        {
+            godine=2020-igraci[i].dat.godina;
+        }
+        int prosek1;
+        prosek1=prosek1/i;
+        cout << prosek1;
+    }
 
+    void prosekvisina ()
+    {
+        int vis=0;
+        int j=0;
+        for (j=0; j<BROJ_IGRACA; j++)
+        {
+            vis=igraci[i].visina;
+        }
+        vis=vis/j;
+    }*/
+/*
     void pisiTxt13(string nazivFajla, string tekst)
 {
     /// fajl je sada objekat klase ofstream
@@ -69,7 +94,7 @@ public:
 
     /// na kraju zatvaramo fajl
     fajl.close();
-}
+}*/
 
 
     friend void ispisNazivaTima (const Tim &ti);
