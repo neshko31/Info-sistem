@@ -1,7 +1,7 @@
 #ifndef MESTO_HPP_INCLUDED
 #define MESTO_HPP_INCLUDED
 
-///ovde imamo prvi primerak metode
+///ovde imamo prvi primerak metode koja nema smisla, ali menja stanje polja
 
 class Mesto
 {

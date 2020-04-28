@@ -5,6 +5,7 @@
 #include "datum.hpp"
 #include "utakmica.hpp"
 
+///inace ovaj opis ovde ne valja, lepse je objasnjeno u mainu
 ///evo ga i funkcija za kola da vidimo mi to
 ///vec se nazire da je najveci problem ovog projekta sama baza podataka
 ///ovde ide dodela za igraca kola i racunanje ko ima najvise tih igraca, pa se proglasava igracem regularnog dela

@@ -1,7 +1,7 @@
 #ifndef IGRAC_HPP_INCLUDED
 #define IGRAC_HPP_INCLUDED
 
-///ovde imam drugi primerak metode, neki pokusaj
+///ovde imam drugi primerak metode kao sto vidimo, menja stanje polja dva puta, prvi put da nam nesto izracuna, a drugi put da vrati na staro
 
 using namespace std;
 
@@ -26,13 +26,24 @@ public:
     Igrac (string i, string p, int a, int b, int c, string d, string n, int dr, int vis, Positions poz, int za): Osoba(i, p, a, b, c, d, n), dres(dr), visina(vis), pozicije(poz), zarada(za) {};
 
 
+    void zaradaigr ()
+    {
+        cout << "Bruto zarada u evrima: " << zarada << endl;
+
+        int pocetna;
+        pocetna=zarada;
+
+        zarada=zarada-(20*zarada/100);
+
+        cout << "Neto zarada: " << zarada << endl;
+        zarada=pocetna;
+    }
     void ispisIgraca ()
     {
         Osoba::ispisPozicijaUTimu();
         cout << "Broj na dresu: " << dres << endl;
         cout << "Visina u cm: " << visina << endl;
         cout << "Pozicije ovog igraca: " << pozicije << endl;
-        cout << "Bruto zarada u evrima: " << zarada << "Neto zarada: " << zarada-(20*zarada/100) << endl;
     }
 
 
