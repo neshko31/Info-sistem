@@ -3,9 +3,14 @@
 
 ///ideju za funkcionalnost cu da objasnim da li imam ovim high quality memom
 ///Well yes, but actually no.
+
+///sprovedene metode:
+///plate igraca, prosecna starost, prosecna visina po timovima,
+///najbolji igrac u svakom timu
+
 ///ideje koje imam za sad:
-///plate igraca, prosecna starost, prosecna visina po timovima, sortovi po visini u timovima
-///najbolji igrac u svakom timu i nakon toga najbolji igrac tog dela sezone, za regularni deo i final four
+///sortovi po visini u timovima i godinama
+///nakon toga najbolji igrac tog dela sezone, za regularni deo i final four
 ///tabela na svakih nekoliko kola, u ovom slucaju 5 kola
 ///tabela koja pokazuje kako se koji tim pokazao kao domacin, a kako kao gost
 ///valjda ce biti jos koja

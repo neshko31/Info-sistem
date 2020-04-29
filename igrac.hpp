@@ -18,12 +18,13 @@ private:
     int visina;
     Positions pozicije;
     int zarada;
+    double indexkor;
 public:
     ///ovi postoje ako zatrebaju
     ///Igrac(string imq="Nenad", string prezq="Lukic", int d2=1, int m2=1, int g2=1, string dr="da", string naz="dada", int dre=31, int vis2=196, Positions poz=centar) : ime(imq), prezime(prezq), dres(dre), visina(vis2), pozicije(poz), datigr (d2, m2, g2), mestoigr(dr, naz) {};
     ///Igrac ():Osoba("ime", "prezime", 1, 1, 1, "neshto", "opet neshto"), dres()
 
-    Igrac (string i, string p, int a, int b, int c, string d, string n, int dr, int vis, Positions poz, int za): Osoba(i, p, a, b, c, d, n), dres(dr), visina(vis), pozicije(poz), zarada(za) {};
+    Igrac (string i, string p, int a, int b, int c, string d, string n, int dr, int vis, Positions poz, int za, double ikor): Osoba(i, p, a, b, c, d, n), dres(dr), visina(vis), pozicije(poz), zarada(za), indexkor(ikor) {};
 
 
     void zaradaigr ()

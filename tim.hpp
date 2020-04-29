@@ -55,6 +55,20 @@ public:
     }
 
     ///ovo su te kao neke metode
+    /*void najboljiigracutimu ()
+    {
+        int i;
+        int najbolji;
+        najbolji=igraci[0].indexkor;
+        for (i=0; i<BROJ_IGRACA; i++)
+        {
+            if (najbolji<igraci[i].indexkor)
+            {
+                najbolji=igraci[i].indexkor;
+            }
+        }
+        ///ispis te linije iz fajla
+    }*/
     /*void prosekstarosti ()
     {
         int godine=0;
