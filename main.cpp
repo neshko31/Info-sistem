@@ -9,6 +9,8 @@
 ///tabela na svakih nekoliko kola, u ovom slucaju 5 kola
 ///tabela koja pokazuje kako se koji tim pokazao kao domacin, a kako kao gost
 ///valjda ce biti jos koja
+///i evo jos jedna
+///za info o igracu, ako korisnik unes ime i prezime igraca kao i tim da mu program nadje tog igraca i ispise ostale stvari o njemu
 
 using namespace std;
 
