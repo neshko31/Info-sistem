@@ -1,0 +1,17 @@
+Tabela
+Fenerbahce, 25, 0, 2, 3, 2504, 2237
+CSKA Moscow, 23, 1, 0, 6, 2590, 2397
+Real Madrid, 22, 0, 0, 8, 2578, 2342
+Anadolu Efes, 20, 0, 0, 10, 2562, 2406
+Barcelona, 17, 1, 0, 12, 2358, 2282
+Panathinaikos, 16, 0, 1, 13, 2382, 2345
+Baskonia, 15, 0, 1, 14, 2449, 2378
+Zalgiris Kaunas, 14, 1, 2, 13, 2360, 2323
+Olympiacos, 14, 1, 0, 15, 2326, 2301
+Maccabi Tel Aviv, 14, 0, 0, 16, 2376, 2346
+Bayern, 13, 1, 0, 16, 2348, 2404
+Olimpia Milano, 13, 1, 0, 16, 2601, 2600
+Khimki, 8, 1, 0, 21, 2333, 2449
+Gran Canaria, 8, 0, 1, 21, 2317, 2616
+Buducnost, 6, 0, 0, 24, 2230, 2550
+Darussafaka, 5, 0, 0, 25, 2238, 2576

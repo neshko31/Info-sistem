@@ -1,0 +1,71 @@
+Kola
+1,
+12.10.2018., Fenerbahce, Gran Canaria, 97, 72
+12.10.2018., Khimki, Olympiacos, 66, 87
+12.10.2018., Zalgiris Kaunas, Baskonia, 79, 87
+12.10.2018., Buducnost, Olimpia Milano, 71, 82
+11.10.2018., Real Madrid, Darussafaka, 109, 93
+11.10.2018., Bayern, Anadolu Efes, 71, 90
+11.10.2018., Panathinaikos, Maccabi Tel Aviv, 89, 84
+11.10.2018., CSKA Moscow, Barcelona, 95, 75
+
+2,
+17.10.2018., Baskonia, Olympiacos, 80, 85
+17.10.2018., Olimpia Milano, Real Madrid, 85, 91
+17.10.2018., Fenerbahce, Khimki, 93, 85
+17.10.2018., Anadolu Efes, Zalgiris Kaunas, 79, 93
+16.10.2018., Gran Canaria, Barcelona, 87, 86
+16.10.2018., Bayern, Panathinaikos, 80, 79
+16.10.2018., Maccabi Tel Aviv, CSKA Moscow, 86, 89
+16.10.2018., Darussafaka, Buducnost, 71, 63
+
+3,
+19.10.2018., Real Madrid, Baskonia, 97, 79
+19.10.2018., Olympiacos, Olimpia Milano, 75, 99
+19.10.2018., Zalgiris Kaunas, Fenerbahce, 75, 82
+19.10.2018., Khimki, Anadolu Efes, 84, 85
+18.10.2018., Barcelona, Bayern, 83, 73
+18.10.2018., Buducnost, Maccabi Tel Aviv, 68, 78
+18.10.2018., Panathinaikos, Gran Canaria, 102, 87
+18.10.2018., CSKA Moscow, Darussafaka, 79, 75
+
+4,
+26.10.2018., Gran Canaria, CSKA Moscow, 91, 106
+26.10.2018., Panathinaikos, Zalgiris Kaunas, 83, 87, prod.
+26.10.2018., Darussafaka, Barcelona, 71, 79
+25.10.2018., Olympiacos, Maccabi Tel Aviv, 88, 80
+25.10.2018., Real Madrid, Buducnost, 89, 55
+25.10.2018., Olimpia Milano, Khimki, 81, 80
+25.10.2018., Bayern, Baskonia, 77, 71
+25.10.2018., Anadolu Efes, Fenerbahce, 89, 83
+
+5,
+02.11.2018., Olimpia Milano, Anadolu Efes, 81, 80
+02.11.2018., Buducnost, Panathinaikos, 67, 72
+02.11.2018., Zalgiris Kaunas, Real Madrid, 79, 90
+02.11.2018., Khimki, Gran Canaria, 87, 72
+01.11.2018., Barcelona, Maccabi Tel Aviv, 74, 58
+01.11.2018., Fenerbahce, Bayern, 88, 84
+01.11.2018., Baskonia, Darussafaka, 82, 56
+01.11.2018., CSKA Moscow, Olympiacos, 69, 65
+
+6,
+09.11.2018., Baskonia, Fenerbahce, 72, 74
+09.11.2018., Panathinaikos, Olympiacos, 93, 80
+09.11.2018., Buducnost, Zalgiris Kaunas, 60, 72
+09.11.2018., Khimki, Barcelona, 80, 87
+08.11.2018., Gran Canaria, Anadolu Efes, 90, 94
+08.11.2018., Olimpia Milano, CSKA Moscow, 85, 90
+08.11.2018., Maccabi Tel Aviv, Real Madrid, 66, 87
+08.11.2018., Bayern, Darussafaka, 116, 70
+
+7,
+16.11.2018., Gran Canaria, Maccabi Tel Aviv, 84, 78
+16.11.2018., Bayern, CSKA Moscow, 79, 93
+16.11.2018., Zalgiris Kaunas, Barcelona, 85, 88, prod.
+16.11.2018., Anadolu Efes, Panathinaikos, 78, 62
+15.11.2018., Real Madrid, Khimki, 79, 74
+15.11.2018., Olympiacos, Fenerbahce, 72, 73
+15.11.2018., Buducnost, Baskonia, 99, 84
+15.11.2018., Darussafaka, Olimpia Milano, 92, 98
+

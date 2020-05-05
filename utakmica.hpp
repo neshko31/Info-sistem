@@ -10,11 +10,12 @@
 class Utakmica
 {
 private:
+    Datum dati;
     Tim tiim1;
     Tim tiim2;
-    Datum dati;
     int brpojen1;
     int brpojen2;
+    string prod;
 public:
     ///ovde samo nesto za ispis utakmice
     ///za info o tekmi
@@ -34,6 +35,7 @@ void ispisUtakmica (const Utakmica &ut)
     cout << " " ;
     cout << ut.brpojen2;
     cout << endl;
+    cout << ut.prod << endl;
     if (ut.brpojen1>ut.brpojen2)
     {
         cout << "Pobednik: ";

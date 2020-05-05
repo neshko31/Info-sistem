@@ -37,7 +37,7 @@ void ispisTabela (const Tabela &tab)
     {
         int i;
         cout << "Klubovi koji su prosli u narednu fazu" << endl;
-        cout << "Naziv tima    Pobede    Pobede nakon prod.    Porazi    Porazi nakon prod.    Poeni dati:Poeni primljeni    Bodovi";
+        cout << "Naziv tima    Pobede    Pobede nakon prod.    Porazi nakon prod.    Porazi    Poeni dati:Poeni primljeni    Bodovi";
         for (i=1; i<=8; i++)
         {
             cout << i << ". ";
@@ -45,4 +45,26 @@ void ispisTabela (const Tabela &tab)
         }
     }
 
+void citajregdeotabela(string regdeo)
+{
+    string linija;
+    ifstream fajl (regdeo);
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            ///Ovo je kao neki nacin da ogranicimo dokle on treba da pise
+            if (linija == "Kola")
+            {
+                break;
+            }
+            cout << linija << '\n';
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
+}
 #endif // TABELA_HPP_INCLUDED

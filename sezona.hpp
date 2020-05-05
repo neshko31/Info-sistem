@@ -23,7 +23,7 @@ void ispisSezona (const Sezona& sez)
 {
     cout << sez.naziv;
     cout << sez.sezonakojagodina;
-    ispisRegularniDeo(sez.reg);
+    ispisRegularniDeoKT(sez.reg);
     ispisTopOsam(sez.top8);
     ispisFinalFour(sez.top4);
 }

@@ -122,7 +122,45 @@ void ispisNazivaTima (const Tim &ti)
 
 void ispisTabelaTim (const Tim &tt)
 {
-    cout << tt.nazivtima << "\t" << tt.pobede << "\t" << tt.pobedeprod << "\t" << tt.porazi << "\t" << tt.poraziprod << "\t" << tt.poenidati << ":" << tt.poeniprimljeni << "\t" << tt.bodovi;
+    cout << tt.nazivtima << "\t" << tt.pobede << "\t" << tt.pobedeprod << "\t" << tt.poraziprod << "\t" <<  tt.porazi << "\t" << tt.poenidati << ":" << tt.poeniprimljeni << "\t" ;
+}
+
+void citajtimfajl(string tim)
+{
+    string linija;
+    ifstream fajl (tim);
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            cout << linija << '\n';
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
+}
+void citajtimoveucesnike(string timo)
+{
+    int i=1;
+    string linija;
+    ifstream fajl (timo);
+    if (fajl.is_open())
+    {
+        while ( getline (fajl,linija) )
+        {
+            cout << "Opcija " << i << ": ";
+            cout << linija << '\n';
+            i++;
+        }
+        fajl.close();
+    }
+
+    else
+        cout << "Neuspesno otvoren fajl";
+
 }
 
 #endif // TIM_HPP_INCLUDED
