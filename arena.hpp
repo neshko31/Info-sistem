@@ -11,16 +11,25 @@ private:
     int brojmesta;
 public:
     Arena (string naziv1="Nesto", string dre="Srbija", string naze="NS", int broj=13200) : naziv(naziv1), mesot(dre, naze), brojmesta(broj){};
-    friend void ispisArena (const Arena &a);
+
+    friend ostream& operator<<(ostream& izlaz, const Arena& a)
+    {
+        izlaz<<"Arena: "<< endl;
+        izlaz<<"Naziv arene:"<<a.naziv<<endl;
+        cout << a.mesot;
+        izlaz << "Broj mesta: "<< a.brojmesta<< endl;
+        return izlaz;
+    }
 };
 
-void ispisArena (const Arena &a)
+///friend void ispisArena (const Arena &a);
+/*void ispisArena (const Arena &a)
 {
     cout << "Arena: " << a.naziv << endl;
     cout << "Drzava i mesto: ";
-    ispisMesto(a.mesot);
+///    ispisMesto(a.mesot);
     cout << "Broj mesta: " << a.brojmesta << endl;
-}
+}*/
 
 ///ispis arene i sama klasa
 #endif // ARENA_HPP_INCLUDED

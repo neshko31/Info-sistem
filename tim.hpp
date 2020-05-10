@@ -12,6 +12,8 @@
 #include "arena.hpp"
 #include "trener.hpp"
 #include "timucinak.hpp"
+#include <fstream>
+#include <sstream>
 
 ///klasa koja objedinjuje igrace, trenera i daje ostale info o timu
 ///imamo metodu za ispis svega
@@ -20,40 +22,108 @@
 
 class Tim: public TimUcinak
 {
-private:
+    ///ovde sam stavio public jer nemam blage kako da ispis utakmice pristupi ako je protected
+public:
     string nazivtima;
     Datum osnovano;
     Arena ar;
     Trener tren;
-
     ///ovo ostaje ovakvo dok se ne odrade vektori
     ///Igrac igraci[BROJ_IGRACA];
+    static int budzet;
 public:
-    Tim (string nt, int d2, int m, int g, string na, string da, string naa, int bra, string a, string b,int a1, int b2, int c2, string d, string n): TimUcinak(0, 0, 0, 0,0, 0, 0), nazivtima(nt),osnovano(d2, m, g), ar(na, da, naa, bra),tren(a, b, a1, b2, c2, d, n) {};
-    void ispisTima ()
+    Tim ():TimUcinak(0, 0, 0, 0, 0, 0, 0), nazivtima("mani mani"), osnovano (1, 1, 1), ar("as", "serbija", "ns", 13200), tren("nenad", "lukic", 1, 1, 1, "lele", "lala")
     {
-        cout << "Naziv tima: " << nazivtima << endl;
-        cout << "Datum osnivanja: ";
-        ispisDatuma (osnovano);
-        cout << endl;
-        cout << "Arena: ";
-        ispisArena(ar);
-        cout << "Pobede: " << pobede << " / Pobede nakon produzetaka: " << pobedeprod <<" / Porazi: " << porazi << " / Porazi nakon produzetaka: " << poraziprod <<endl;
-        cout << "Bodovi u trenutnoj sezoni: " << bodovi << endl;
-        cout << "Ukupno datih poena: " << poenidati << " / Ukupno primljenih poena: " << poeniprimljeni << endl;
-        cout << "Trener: ";
-        tren.ispisTrenera ();
+        budzet+=1000;
+    };
 
+    friend ostream& operator<<(ostream& izlaz, const Tim& t)
+    {
+        izlaz<<"Tim: "<<t.nazivtima<<endl;
+        cout << t.osnovano;
+        cout << t.ar;
+        cout << t.tren;
 
-
+        ///ovako bih ja za igrace valjda tako ide
         /*for (int i=0; i<BROJ_IGRACA; i++)
         {
-            cout << "Igrac: " << endl;
-            igraci[i].ispisIgraca();
-            cout << endl;
+            cout << t[i].igraci;
         }*/
+        return izlaz;
+    }
+    static int getStatickiBudzet()
+    {
+        return budzet;
+    }
+    static int setBudzet (int a)
+    {
+        budzet=a;
+        return budzet;
     }
 
+    ///metode za povecavanje i smanjivanje rade na neki nacin, ali zapravo ne rade
+    ///s obzirom na to da on ne zna koja je vrednost u txt fajlu
+    ///oke ipak rade
+
+    static void povecajBudzet (int a, string budzetfajl)
+    {
+        budzet=dajbudzet(budzetfajl);
+        budzet=budzet+a;
+
+        ofstream fajl;
+        fajl.open (budzetfajl);
+        fajl << budzet << endl;
+        fajl.close();
+    }
+    static void smanjiBudzet (int a, string budzetfajl)
+    {
+        budzet=dajbudzet(budzetfajl);
+        budzet=budzet-a;
+
+        ofstream fajl;
+        fajl.open (budzetfajl);
+        fajl << budzet << endl;
+        fajl.close();
+    }
+    static int dajbudzet (string naziv)
+    {
+        int b;
+        string linija;
+        ifstream fajl (naziv);
+        if (fajl.is_open())
+        {
+            getline (fajl,linija);
+
+            stringstream ss;
+            ss << linija;
+            ss >> b;
+            fajl.close();
+            return b;
+        }
+        else
+        {
+            cout << "Neuspesno otvoren fajl";
+            return 0;
+        }
+    }
+    static void citajBudzetFajl (string nazivFajla)
+    {
+        string linija;
+        ifstream fajl (nazivFajla);
+        if (fajl.is_open())
+        {
+            while ( getline (fajl,linija) )
+            {
+                cout << linija << '\n';
+            }
+            fajl.close();
+        }
+        else
+        {
+            cout << "Neuspesno otvoren fajl";
+        }
+
+    }
     ///ovo su te kao neke metode
     /*void najboljiigracutimu ()
     {
@@ -92,39 +162,19 @@ public:
         }
         vis=vis/j;
     }*/
-/*
-    void pisiTxt13(string nazivFajla, string tekst)
-{
-    /// fajl je sada objekat klase ofstream
-    ofstream fajl;
-
-    /// koristimo metodu open za otvaranja fajla
-    /// kao parametar prosledjujemo naziv fajla i njegovu ekstenziju
-    fajl.open (nazivFajla);
-
-    /// pisanje vrsimo tako sto umesto cout pisemo naziv fajla
-    /// koristimo operator <<
-    fajl << tekst << endl;
-
-    /// na kraju zatvaramo fajl
-    fajl.close();
-}*/
-
-
     friend void ispisNazivaTima (const Tim &ti);
     friend void ispisTabelaTim (const Tim &tt);
 };
 
+int Tim::budzet=0;
 void ispisNazivaTima (const Tim &ti)
 {
     cout << ti.nazivtima;
 }
-
 void ispisTabelaTim (const Tim &tt)
 {
     cout << tt.nazivtima << "\t" << tt.pobede << "\t" << tt.pobedeprod << "\t" << tt.poraziprod << "\t" <<  tt.porazi << "\t" << tt.poenidati << ":" << tt.poeniprimljeni << "\t" ;
 }
-
 void citajtimfajl(string tim)
 {
     string linija;
@@ -162,5 +212,29 @@ void citajtimoveucesnike(string timo)
         cout << "Neuspesno otvoren fajl";
 
 }
+
+/*void ispisTima ()
+{
+    cout << "Naziv tima: " << nazivtima << endl;
+    cout << "Datum osnivanja: ";
+///        ispisDatuma (osnovano);
+    cout << endl;
+    cout << "Arena: ";
+///        ispisArena(ar);
+    cout << "Pobede: " << pobede << " / Pobede nakon produzetaka: " << pobedeprod <<" / Porazi: " << porazi << " / Porazi nakon produzetaka: " << poraziprod <<endl;
+    cout << "Bodovi u trenutnoj sezoni: " << bodovi << endl;
+    cout << "Ukupno datih poena: " << poenidati << " / Ukupno primljenih poena: " << poeniprimljeni << endl;
+    cout << "Trener: ";
+///        tren.ispisTrenera ();
+for (int i=0; i<BROJ_IGRACA; i++)
+    {
+        cout << "Igrac: " << endl;
+        igraci[i].ispisIgraca();
+        cout << endl;
+    }*/
+
+
+
+///Tim (string nt, int d2, int m, int g, string na, string da, string naa, int bra, string a, string b,int a1, int b2, int c2, string d, string n): TimUcinak(0, 0, 0, 0,0, 0, 0), nazivtima(nt),osnovano(d2, m, g), ar(na, da, naa, bra),tren(a, b, a1, b2, c2, d, n) {};
 
 #endif // TIM_HPP_INCLUDED

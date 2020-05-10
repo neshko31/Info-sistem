@@ -15,6 +15,24 @@ public:
     ///ovde su dva polu i jedno finale
     ///fakticki samo ispis za 3 tekme
     ///nista preterano bitno ali okej
+    friend ostream& operator<<(ostream& izlaz, const FinalFour& ff)
+    {
+        int i=0;
+        izlaz << "Timovi ucesnici: "<<endl;
+        for (i=0; i<4; i++)
+        {
+            cout <<  ff.cetirkomada[i].nazivtima;
+        }
+        for (i=0; i<2; i++)
+        {
+            izlaz << "Polufinale broj " << i << endl;
+            cout << ff.tekmice[i];
+        }
+        i++;
+        izlaz << "Finale" << endl;
+        cout << ff.tekmice[i];
+        return izlaz;
+    }
     friend void ispisFinalFour (const FinalFour& ff);
 };
 
@@ -22,7 +40,7 @@ void ispisFinalFour (const FinalFour& ff)
 {
     int i;
     cout << "Utakmice se igraju u: " << endl;
-    ispisArena(ff.aren);
+///    ispisArena(ff.aren);
     cout << "U ovosezonskom izdanju Final Four igrace: ";
     for (i=0; i<4; i++)
     {
@@ -30,13 +48,13 @@ void ispisFinalFour (const FinalFour& ff)
     }
     i=0;
     cout << "Prvo polufinale: Final Four " << endl;
-    ispisUtakmica (ff.tekmice[i]);
+///    ispisUtakmica (ff.tekmice[i]);
 
     cout << "Drugo polufinale Final four " << endl;
-    ispisUtakmica(ff.tekmice[i++]);
+   /// ispisUtakmica(ff.tekmice[i++]);
 
     cout << "Finale: " << endl;
-    ispisUtakmica(ff.tekmice[i++]);
+ ///   ispisUtakmica(ff.tekmice[i++]);
 
 }
 #endif // FINALFOUR_HPP_INCLUDED

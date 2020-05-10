@@ -36,7 +36,54 @@ using namespace std;
 #include "finalfour.hpp"
 #include "sezona.hpp"
 
-
+void menibudzet (int bu, string sez)
+{
+    string budzetf;
+    do
+    {
+        cout << "Informacije o budzetu" << endl;
+        cout << "Odabrana sezona je: " << sez << endl;
+        cout << "-------------------------" << endl;
+        cout << "Opcija 1: Povecaj budzet" << endl;
+        cout << "Opcija 2: Smanji budzet" << endl;
+        cout << "Opcija 3: Ispisi stanje budzeta" << endl;
+        cout << "Opcija 0: Nazad" << endl;
+        cout << "Unesi zeljenu opciju: ";
+        cin >> bu;
+        switch  (bu)
+        {
+        case 1:
+            cout << "Izabrana opcija je povecavanje budzeta" << endl;
+            cout << "Unesite iznos u evrima: ";
+            int er;
+            cin >> er;
+            if (sez=="18/19")
+            {
+                budzetf="budzet 18.19.txt";
+                Tim::povecajBudzet(er, budzetf);
+            }
+            break;
+        case 2:
+            cout << "Izabrana opcija je smanjivanje budzeta" << endl;
+            cout << "Unesite iznos u evrima: ";
+            int em;
+            cin >> em;
+            if (sez=="18/19")
+            {
+                budzetf="budzet 18.19.txt";
+                Tim::smanjiBudzet(em, budzetf);
+            }
+            break;
+        case 3:
+            cout << "Trenutno stanje budzeta iznosi: " << endl;
+            Tim::citajBudzetFajl("budzet 18.19.txt");
+            break;
+        default:
+            break;
+        }
+    }
+    while (bu!=0);
+}
 void menitimovi (int e, string sez)
 {
     string nasFajl;
@@ -169,6 +216,7 @@ void regdeo (int d, string sez)
 }
 void menideotakmicenja (int c, string sez)
 {
+    int bu1=0;
     do
     {
         cout << "Izbor delova sezone" << endl;
@@ -178,6 +226,7 @@ void menideotakmicenja (int c, string sez)
         cout << "Opcija 2: Top 8" << endl;
         cout << "Opcija 3: Final Four" << endl;
         cout << "Opcija 4: Timovi ucesnici" << endl;
+        cout << "Opcija 5: Budzet svih timova" << endl;
         cout << "Opcija 0: Nazad" << endl;
         cout << "Unesi zeljenu opciju: ";
         cin >> c;
@@ -192,6 +241,9 @@ void menideotakmicenja (int c, string sez)
             break;
         case 4:
             menitimovi(c, sez);
+            break;
+        case 5:
+            menibudzet(bu1, sez);
             break;
         default:
             break;
@@ -264,7 +316,30 @@ void menizapocetak (int a)
 }
 int main()
 {
-    int a=0;
-    menizapocetak(a);
+    //int a=0;
+    //menizapocetak(a);
+    /*Datum d1;
+    cout << d1;
+
+    Mesto m1;
+    cout << m1;
+
+    Arena a1;
+    cout << a1;
+
+    Trener t1;
+    cout << t1;
+
+    Osoba o1;
+    cout << o1;
+
+    Igrac i1;
+    cout << i1;
+
+    Tim ti1;
+    cout << ti1;*/
+
+    Utakmica ut1;
+    cout << ut1;
     return 0;
 }

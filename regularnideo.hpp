@@ -16,6 +16,18 @@ public:
     ///korisnik dobija opciju ispisa samo kola ili kola+tabela
     ///ovde je ispis ovih svih kola kao i ispis same tabele
 
+    ///ni ovo se ne moze testirati jeri nema konstruktora
+    friend ostream& operator<<(ostream& izlaz, const RegularniDeo& rd)
+    {
+        izlaz << "Trajanje u mesecima: "<< rd.trajanje << endl;
+        izlaz << "Broj timova ucesnika: "<< rd.brojtimova << endl;
+        cout << rd.tabelarno;
+        for (int i=0; i<BROJ_KOLA; i++)
+        {
+            cout << rd.kola[i];
+        }
+        return izlaz;
+    }
 
     friend void ispisRegularniDeoKT (const RegularniDeo &reg);
     friend void ispisRegularniDeoK (const RegularniDeo &reg);

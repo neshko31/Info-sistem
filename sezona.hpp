@@ -16,6 +16,15 @@ private:
 public:
     ///ah simpatican deo koji bi trebao da objedini sve zivo
     ///meni za izbor da korisnik zna gde ide
+
+    friend ostream& operator<<(ostream& izlaz, const Sezona& sez)
+    {
+        izlaz << sez.naziv << " "<<sez.sezonakojagodina<< endl;
+        cout << sez.reg;
+        cout << sez.top8;
+        cout << sez.top4;
+        return izlaz;
+    }
     friend void ispisSezona (const Sezona& sez);
 };
 

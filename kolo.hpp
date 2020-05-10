@@ -13,12 +13,23 @@
 ///nakon sto imamo sve iz svih timova uzimamo najbolje i opet trazimo najboljeg i time proglasavamo najboljeg igraca
 ///slican sistem ide i za final four
 
+
+///ovo nije testirano u mainu pa cemo samo reci da valja
 class Kolo
 {
 private:
     int rednibr;
     Utakmica tekme[BROJ_UTAKMICA];
 public:
+    friend ostream& operator<<(ostream& izlaz, const Kolo& ko)
+    {
+        izlaz << "Kolo broj: " << ko.rednibr << endl;
+        for (int i=0; i<BROJ_UTAKMICA; i++)
+        {
+            cout << ko.tekme;
+        }
+        return izlaz;
+    }
     friend void ispisKola (const Kolo &ko);
 };
 
@@ -29,7 +40,7 @@ void ispisKola (const Kolo &ko)
     int i;
     for (i=1; i<=BROJ_UTAKMICA; i++)
     {
-        ispisUtakmica(ko.tekme[i]);
+///        ispisUtakmica(ko.tekme[i]);
     }
 }
 #endif // KOLO_HPP_INCLUDED
