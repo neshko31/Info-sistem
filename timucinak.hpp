@@ -24,6 +24,13 @@ public:
         poenidati=pd;
         poeniprimljeni=pp;
     }
+        void ispisiInfoTim()
+    {
+        cout << "Pobede: " << pobede << " /Pobede: " << pobedeprod << endl;
+        cout << "Pobede: " << porazi << " /Pobede: " << poraziprod << endl;
+        cout << "Bodovi u ovoj sezoni: " << bodovi << endl;
+        cout << "Dati poeni: " << poenidati << " /Poeni primljeni: " << poeniprimljeni << endl;
+    }
 };
 
 #endif // TIMUCINAK_HPP_INCLUDED

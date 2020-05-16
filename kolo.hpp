@@ -4,7 +4,7 @@
 
 #include "datum.hpp"
 #include "utakmica.hpp"
-
+#include <vector>
 ///inace ovaj opis ovde ne valja, lepse je objasnjeno u mainu
 ///evo ga i funkcija za kola da vidimo mi to
 ///vec se nazire da je najveci problem ovog projekta sama baza podataka
@@ -15,32 +15,81 @@
 
 
 ///ovo nije testirano u mainu pa cemo samo reci da valja
+
 class Kolo
 {
-private:
-    int rednibr;
-    Utakmica tekme[BROJ_UTAKMICA];
 public:
+    int rednibr;
+    vector <Utakmica*> tekme;
+public:
+    Kolo (int n)
+    {
+        rednibr=n;
+    }
     friend ostream& operator<<(ostream& izlaz, const Kolo& ko)
     {
         izlaz << "Kolo broj: " << ko.rednibr << endl;
-        for (int i=0; i<BROJ_UTAKMICA; i++)
-        {
-            cout << ko.tekme;
-        }
+        /*for (auto it=tekme.begin(); it<tekme.end(); it++){
+          (*it)->cout << tekme();
+        }*/
         return izlaz;
     }
-    friend void ispisKola (const Kolo &ko);
+    void dodajtekmu(Utakmica* utak)
+    {
+        tekme.push_back(utak);
+    }
+    void ispisiKola()
+    {
+        cout << "Kolo: " << rednibr << endl;
+        for (auto it=tekme.begin(); it<tekme.end(); it++)
+        {
+            (*it)->ispistekme();
+        }
+    }
+    void ispisTekmeeee ()
+    {
+        for (auto it=tekme.begin(); it<tekme.end(); it++)
+        {
+            (*it)->ispistekme();
+        }
+    }
+    int kolikoJeKola()
+    {
+        return tekme.size();
+    }
+    void pretrazipoid(int ide)
+    {
+        bool pronadjen = false;
+        for (auto it=tekme.begin(); it<tekme.end(); it++)
+        {
+            if (ide==(*it)->getId())
+            {
+                (*it)->ispistekme();
+                pronadjen=true;
+            }
+        }
+        if (!pronadjen)
+        {
+            cout<<"Nema takve utakmice!"<<endl;
+        }
+    }
+    void pretrazipotim(string tim)
+    {
+        bool pronadjen = false;
+        for (auto it=tekme.begin(); it<tekme.end(); it++)
+        {
+            if (tim==(*it)->getTim1() || tim==(*it)->getTim2())
+            {
+                (*it)->ispistekme();
+                pronadjen=true;
+            }
+        }
+        if (!pronadjen)
+        {
+            cout<<"Nema takve utakmice!"<<endl;
+        }
+    }
 };
 
-void ispisKola (const Kolo &ko)
-{
-    cout << "Kolo: " << ko.rednibr << endl;
-    cout << endl;
-    int i;
-    for (i=1; i<=BROJ_UTAKMICA; i++)
-    {
-///        ispisUtakmica(ko.tekme[i]);
-    }
-}
+
 #endif // KOLO_HPP_INCLUDED

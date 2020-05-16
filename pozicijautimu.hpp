@@ -4,6 +4,9 @@
 #include "datum.hpp"
 #include "mesto.hpp"
 
+///ne pise da metoda treba da bude komplikovana, niti kakva je neophodna da bude, vec samo da bude nasledjena i redefinisana
+///i da se virtualnost prikaze u mainu, to mozda i nemam
+
 class Osoba
 {
 protected:
@@ -17,17 +20,17 @@ public:
     {
         izlaz<<"Ime: "<<o.ime<<endl;
         izlaz<<"Prezime: "<<o.prezime<<endl;
-        cout << o.dat;
-        cout << o.mestasce;
+        izlaz << o.dat;
+        izlaz << o.mestasce;
         return izlaz;
     }
-};
-///ako zatreba, a ne verujem u to
-    /*void ispisPozicijaUTimu ()
+    virtual void predstavise ()
     {
-        cout << "Ime: " << ime << "Prezime: " << prezime << endl;
-        ispisDatuma(dat);
-        cout << endl;
-        ispisMesto(mestasce);
-    }*/
+        cout << "Ime: " << ime << endl;
+        cout << "Prezime: " << prezime << endl;
+        dat.ispisidatum();
+        mestasce.ispisimesto();
+    }
+};
+
 #endif // POZICIJAUTIMU_HPP_INCLUDED

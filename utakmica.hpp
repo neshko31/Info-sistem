@@ -10,18 +10,32 @@
 class Utakmica
 {
 private:
-    Datum dati;
-    Tim tiim1;
-    Tim tiim2;
+    int id;
+    int dan;
+    int mesec;
+    int godina;
+    string tim1;
+    string tim2;
     int brpojen1;
     int brpojen2;
     bool prod;
 public:
-    Utakmica ():dati(1, 1, 1),tiim1(), tiim2(), brpojen1(15), brpojen2(20), prod(false) {};
+    Utakmica (int id1, int d, int m, int g, string tim11, string tim22, int po1, int po2, bool pr)
+    {
+        id=id1;
+        dan=d;
+        mesec=m;
+        godina=g;
+        tim1=tim11;
+        tim2=tim22;
+        brpojen1=po1;
+        brpojen2=po2;
+        prod=pr;
+    }
     friend ostream& operator<<(ostream& izlaz, const Utakmica& ut)
     {
-        izlaz << ut.dati << endl;
-        izlaz << "Domaci/Gosti: " << ut.tiim1.nazivtima << "/" << ut.tiim2.nazivtima << endl;
+        izlaz << ut.dan << "."<< ut.mesec<< "."<< ut.godina << endl;
+        izlaz << "Domaci/Gosti: " << ut.tim1 << "/" << ut.tim2 << endl;
         izlaz << "Rezultat: " << ut.brpojen1 << ":" << ut.brpojen2 << endl;
         if (ut.prod==true)
         {
@@ -29,35 +43,25 @@ public:
         }
         return izlaz;
     }
-
-
-};
-/*
-///ovde samo nesto za ispis utakmice
-    ///za info o tekmi
-    friend void ispisUtakmica (const Utakmica &ut);
-void ispisUtakmica (const Utakmica &ut)
-{
-    cout << "Datum igranja" ;
-///    ispisDatuma (ut.dati);
-    cout << endl;
-    ispisNazivaTima(ut.tiim1);
-    cout << " " ;
-    cout << endl;
-    cout << ut.brpojen1;
-    ispisNazivaTima(ut.tiim2);
-    cout << " " ;
-    cout << ut.brpojen2;
-    cout << endl;
-    cout << ut.prod << endl;
-    if (ut.brpojen1>ut.brpojen2)
+    void ispistekme ()
     {
-        cout << "Pobednik: ";
-        ispisNazivaTima(ut.tiim1);
+        cout << "Datum: " << dan << "." << mesec <<"." << godina << ". ";
+        cout << tim1 << " " << brpojen1 << endl;
+        cout << "                  " ;
+        cout << tim2 << " " << brpojen2 << endl;
     }
-    else{
-    cout << "Pobednik: ";
-        ispisNazivaTima(ut.tiim2);
+    int getId ()
+    {
+        return id;
     }
-}*/
+    string getTim1 ()
+    {
+        return tim1;
+    }
+    string getTim2 ()
+    {
+        return tim2;
+    }
+};
+
 #endif // UTAKMICA_HPP_INCLUDED

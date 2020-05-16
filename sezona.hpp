@@ -20,20 +20,11 @@ public:
     friend ostream& operator<<(ostream& izlaz, const Sezona& sez)
     {
         izlaz << sez.naziv << " "<<sez.sezonakojagodina<< endl;
-        cout << sez.reg;
-        cout << sez.top8;
-        cout << sez.top4;
+        izlaz << sez.reg;
+        izlaz << sez.top8;
+        izlaz << sez.top4;
         return izlaz;
     }
-    friend void ispisSezona (const Sezona& sez);
 };
 
-void ispisSezona (const Sezona& sez)
-{
-    cout << sez.naziv;
-    cout << sez.sezonakojagodina;
-    ispisRegularniDeoKT(sez.reg);
-    ispisTopOsam(sez.top8);
-    ispisFinalFour(sez.top4);
-}
 #endif // SEZONA_HPP_INCLUDED

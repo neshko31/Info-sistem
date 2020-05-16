@@ -21,40 +21,24 @@ public:
         izlaz << "Timovi ucesnici: "<<endl;
         for (i=0; i<4; i++)
         {
-            cout <<  ff.cetirkomada[i].nazivtima;
+            izlaz <<  ff.cetirkomada[i].nazivtima;
         }
         for (i=0; i<2; i++)
         {
             izlaz << "Polufinale broj " << i << endl;
-            cout << ff.tekmice[i];
+            izlaz << ff.tekmice[i];
         }
         i++;
         izlaz << "Finale" << endl;
-        cout << ff.tekmice[i];
+        izlaz << ff.tekmice[i];
+
+	i++;
+	izlaz << "Trece mesto" << endl;
+	izlaz << ff.tekmice[i];
         return izlaz;
     }
-    friend void ispisFinalFour (const FinalFour& ff);
+
 };
 
-void ispisFinalFour (const FinalFour& ff)
-{
-    int i;
-    cout << "Utakmice se igraju u: " << endl;
-///    ispisArena(ff.aren);
-    cout << "U ovosezonskom izdanju Final Four igrace: ";
-    for (i=0; i<4; i++)
-    {
-        ispisNazivaTima(ff.cetirkomada[i]);
-    }
-    i=0;
-    cout << "Prvo polufinale: Final Four " << endl;
-///    ispisUtakmica (ff.tekmice[i]);
 
-    cout << "Drugo polufinale Final four " << endl;
-   /// ispisUtakmica(ff.tekmice[i++]);
-
-    cout << "Finale: " << endl;
- ///   ispisUtakmica(ff.tekmice[i++]);
-
-}
 #endif // FINALFOUR_HPP_INCLUDED

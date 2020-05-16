@@ -1,71 +1,45 @@
-Kola
-1,
-12.10.2018., Fenerbahce, Gran Canaria, 97, 72
-12.10.2018., Khimki, Olympiacos, 66, 87
-12.10.2018., Zalgiris Kaunas, Baskonia, 79, 87
-12.10.2018., Buducnost, Olimpia Milano, 71, 82
-11.10.2018., Real Madrid, Darussafaka, 109, 93
-11.10.2018., Bayern, Anadolu Efes, 71, 90
-11.10.2018., Panathinaikos, Maccabi Tel Aviv, 89, 84
-11.10.2018., CSKA Moscow, Barcelona, 95, 75
-
-2,
-17.10.2018., Baskonia, Olympiacos, 80, 85
-17.10.2018., Olimpia Milano, Real Madrid, 85, 91
-17.10.2018., Fenerbahce, Khimki, 93, 85
-17.10.2018., Anadolu Efes, Zalgiris Kaunas, 79, 93
-16.10.2018., Gran Canaria, Barcelona, 87, 86
-16.10.2018., Bayern, Panathinaikos, 80, 79
-16.10.2018., Maccabi Tel Aviv, CSKA Moscow, 86, 89
-16.10.2018., Darussafaka, Buducnost, 71, 63
-
-3,
-19.10.2018., Real Madrid, Baskonia, 97, 79
-19.10.2018., Olympiacos, Olimpia Milano, 75, 99
-19.10.2018., Zalgiris Kaunas, Fenerbahce, 75, 82
-19.10.2018., Khimki, Anadolu Efes, 84, 85
-18.10.2018., Barcelona, Bayern, 83, 73
-18.10.2018., Buducnost, Maccabi Tel Aviv, 68, 78
-18.10.2018., Panathinaikos, Gran Canaria, 102, 87
-18.10.2018., CSKA Moscow, Darussafaka, 79, 75
-
-4,
-26.10.2018., Gran Canaria, CSKA Moscow, 91, 106
-26.10.2018., Panathinaikos, Zalgiris Kaunas, 83, 87, prod.
-26.10.2018., Darussafaka, Barcelona, 71, 79
-25.10.2018., Olympiacos, Maccabi Tel Aviv, 88, 80
-25.10.2018., Real Madrid, Buducnost, 89, 55
-25.10.2018., Olimpia Milano, Khimki, 81, 80
-25.10.2018., Bayern, Baskonia, 77, 71
-25.10.2018., Anadolu Efes, Fenerbahce, 89, 83
-
-5,
-02.11.2018., Olimpia Milano, Anadolu Efes, 81, 80
-02.11.2018., Buducnost, Panathinaikos, 67, 72
-02.11.2018., Zalgiris Kaunas, Real Madrid, 79, 90
-02.11.2018., Khimki, Gran Canaria, 87, 72
-01.11.2018., Barcelona, Maccabi Tel Aviv, 74, 58
-01.11.2018., Fenerbahce, Bayern, 88, 84
-01.11.2018., Baskonia, Darussafaka, 82, 56
-01.11.2018., CSKA Moscow, Olympiacos, 69, 65
-
-6,
-09.11.2018., Baskonia, Fenerbahce, 72, 74
-09.11.2018., Panathinaikos, Olympiacos, 93, 80
-09.11.2018., Buducnost, Zalgiris Kaunas, 60, 72
-09.11.2018., Khimki, Barcelona, 80, 87
-08.11.2018., Gran Canaria, Anadolu Efes, 90, 94
-08.11.2018., Olimpia Milano, CSKA Moscow, 85, 90
-08.11.2018., Maccabi Tel Aviv, Real Madrid, 66, 87
-08.11.2018., Bayern, Darussafaka, 116, 70
-
-7,
-16.11.2018., Gran Canaria, Maccabi Tel Aviv, 84, 78
-16.11.2018., Bayern, CSKA Moscow, 79, 93
-16.11.2018., Zalgiris Kaunas, Barcelona, 85, 88, prod.
-16.11.2018., Anadolu Efes, Panathinaikos, 78, 62
-15.11.2018., Real Madrid, Khimki, 79, 74
-15.11.2018., Olympiacos, Fenerbahce, 72, 73
-15.11.2018., Buducnost, Baskonia, 99, 84
-15.11.2018., Darussafaka, Olimpia Milano, 92, 98
-
+K,1
+UT,1,12,10,2018,Fenerbahce,Gran Canaria,97,72,false
+UT,2,12,10,2018,Khimki,Olympiacos,66,87,false
+UT,3,12,10,2018,Zalgiris Kaunas,Baskonia,79,87,false
+UT,4,12,10,2018,Buducnost,Olimpia Milano,71,82,false
+UT,5,11,10,2018,Real Madrid,Darussafaka,109,93,false
+UT,6,11,10,2018,Bayern, Anadolu Efes,71,90,false
+UT,7,11,10,2018,Panathinaikos,Maccabi Tel Aviv,89,84,false
+UT,8,11,10,2018,CSKA Moscow,Barcelona,95,75,false
+K,2,
+UT,9,17,10,2018,Baskonia,Olympiacos,80,85,false
+UT,10,17,10,2018,Olimpia Milano,Real Madrid,85,91,false
+UT,11,17,10,2018,Fenerbahce,Khimki,93,85,false
+UT,12,17,10,2018,Anadolu Efes,Zalgiris Kaunas,79,93,false
+UT,13,16,10,2018,Gran Canaria,Barcelona,87,86,false
+UT,14,16,10,2018,Bayern,Panathinaikos,80,79,false
+UT,15,16,10,2018,Maccabi Tel Aviv,CSKA Moscow,86,89,false
+UT,16,16,10,2018,Darussafaka,Buducnost,71,63,false
+K,3,
+UT,17,19,10,2018,Real Madrid,Baskonia,97,79,false
+UT,18,19,10,2018,Olympiacos,Olimpia Milano,75,99,false
+UT,19,19,10,2018,Zalgiris Kaunas,Fenerbahce,75,82,false
+UT,20,19,10,2018,Khimki,Anadolu Efes,84,85,false
+UT,21,18,10,2018,Barcelona,Bayern,83,73,false
+UT,22,18,10,2018,Buducnost,Maccabi Tel Aviv,68,78,false
+UT,23,18,10,2018,Panathinaikos,Gran Canaria,102,87,false
+UT,24,18,10,2018,CSKA Moscow,Darussafaka,79,75,false
+K,4,
+UT,25,26,10,2018,Gran Canaria,CSKA Moscow,91,106,false
+UT,26,26,10,2018,Panathinaikos,Zalgiris Kaunas,83,87,true
+UT,27,26,10,2018,Darussafaka,Barcelona,71,79,false
+UT,28,25,10,2018,Olympiacos,Maccabi Tel Aviv,88,80,false
+UT,29,25,10,2018,Real Madrid,Buducnost,89,55,false
+UT,30,25,10,2018,Olimpia Milano,Khimki,81,80,false
+UT,31,25,10,2018,Bayern,Baskonia,77,71,false
+UT,32,25,10,2018,Anadolu Efes,Fenerbahce,89,83,false
+K,5,
+UT,33,02,11,2018,Olimpia Milano,Anadolu Efes,81,80,false
+UT,34,02,11,2018,Buducnost,Panathinaikos,67,72,false
+UT,35,02,11,2018,Zalgiris Kaunas,Real Madrid,79,90,false
+UT,36,02,11,2018,Khimki,Gran Canaria,87,72,false
+UT,37,01,11,2018,Barcelona,Maccabi Tel Aviv,74,58,false
+UT,38,01,11,2018,Fenerbahce,Bayern,88,84,false
+UT,39,01,11,2018,Baskonia,Darussafaka,82,56,false
+UT,40,01,11,2018,CSKA Moscow,Olympiacos,69,65,false

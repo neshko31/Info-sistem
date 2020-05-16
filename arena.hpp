@@ -16,20 +16,18 @@ public:
     {
         izlaz<<"Arena: "<< endl;
         izlaz<<"Naziv arene:"<<a.naziv<<endl;
-        cout << a.mesot;
+        izlaz << a.mesot;
         izlaz << "Broj mesta: "<< a.brojmesta<< endl;
         return izlaz;
     }
+    void ispisihala ()
+    {
+        cout << "Naziv hale: " << naziv << endl;
+        cout << "Mesto: ";
+        mesot.ispisimesto();
+        cout << "Broj mesta: " << brojmesta << endl;
+    }
 };
-
-///friend void ispisArena (const Arena &a);
-/*void ispisArena (const Arena &a)
-{
-    cout << "Arena: " << a.naziv << endl;
-    cout << "Drzava i mesto: ";
-///    ispisMesto(a.mesot);
-    cout << "Broj mesta: " << a.brojmesta << endl;
-}*/
 
 ///ispis arene i sama klasa
 #endif // ARENA_HPP_INCLUDED

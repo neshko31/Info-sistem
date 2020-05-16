@@ -3,7 +3,7 @@
 
 class Datum
 {
-private:
+public:
     int dan;
     int mesec;
     int godina;
@@ -19,24 +19,11 @@ public:
         izlaz<<"Datum: "<<d.dan<<"."<<d.mesec<<"."<<d.godina<<"."<<endl;
         return izlaz;
     }
+    void ispisidatum()
+    {
+        cout << dan << "." << mesec << "." << godina << "." <<endl;
+    }
 };
-///friend void ispisDatuma (const Datum &datumcic);
-/*void ispisDatuma (const Datum &datumcic)
-{
-    cout <<datumcic.dan<<"."<<datumcic.mesec<<"."<<datumcic.godina<<".";
-}*/
-///ako zatreba
-    /*Datum ()
-    {
-        dan=1;
-        mesec=1;
-        godina=1;
-    }*/
-    /*Datum (const Datum&d)
-    {
-        dan=d.dan;
-        mesec=d.mesec;
-        godina=d.godina;
-    }*/
+
 ///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama
 #endif // DATUM_HPP_INCLUDED

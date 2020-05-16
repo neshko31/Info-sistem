@@ -20,26 +20,14 @@ public:
     ///radi ako je verovati mom instinktu
     friend ostream& operator<<(ostream& izlaz, const TopOsam& to)
     {
-        ispisTabelaTopOsam(to.tabelica);
+///        ispisTabelaTopOsam(to.tabelica);
         for (int i=0; i<MAX; i++)
         {
-            cout << to.tekme[i];
+            izlaz << to.tekme[i];
         }
         return izlaz;
     }
-    friend void ispisTopOsam (const TopOsam &topo);
 };
 
-void ispisTopOsam (const TopOsam &topo)
-{
-    int i;
-    cout << "TOP OSAM" << endl;
-    cout << endl;
-    ispisTabelaTopOsam(topo.tabelica);
-    for (i=0; i<20; i++)
-    {
-///        ispisUtakmica(topo.tekme[i]);
-    }
 
-}
 #endif // TOPOSAM_HPP_INCLUDED

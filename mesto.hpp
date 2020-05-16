@@ -29,22 +29,11 @@ public:
         izlaz<<"Drzava: "<< m.drzava << endl;
         return izlaz;
     }
+    void ispisimesto ()
+    {
+        cout << drzava << ", " << naziv << endl;
+    }
 };
-///friend void ispisMesto (const Mesto &mestice);
-///ako zatreba
-/*Mesto(){
-    drzava="evropa";
-    naziv="grad u evropi";
-}
-Mesto (const Mesto &me)
-{
-    drzava=me.drzava;
-    naziv=me.naziv;
-}*/
-/*void ispisMesto (const Mesto &mestice)
-{
-    cout << mestice.drzava << ", "<< mestice.naziv << endl;
-}*/
 
 ///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama
 #endif // MESTO_HPP_INCLUDED

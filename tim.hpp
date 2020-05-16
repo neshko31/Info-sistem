@@ -14,6 +14,7 @@
 #include "timucinak.hpp"
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 ///klasa koja objedinjuje igrace, trenera i daje ostale info o timu
 ///imamo metodu za ispis svega
@@ -28,8 +29,7 @@ public:
     Datum osnovano;
     Arena ar;
     Trener tren;
-    ///ovo ostaje ovakvo dok se ne odrade vektori
-    ///Igrac igraci[BROJ_IGRACA];
+    vector <Igrac*> igraci;
     static int budzet;
 public:
     Tim ():TimUcinak(0, 0, 0, 0, 0, 0, 0), nazivtima("mani mani"), osnovano (1, 1, 1), ar("as", "serbija", "ns", 13200), tren("nenad", "lukic", 1, 1, 1, "lele", "lala")
@@ -40,15 +40,9 @@ public:
     friend ostream& operator<<(ostream& izlaz, const Tim& t)
     {
         izlaz<<"Tim: "<<t.nazivtima<<endl;
-        cout << t.osnovano;
-        cout << t.ar;
-        cout << t.tren;
-
-        ///ovako bih ja za igrace valjda tako ide
-        /*for (int i=0; i<BROJ_IGRACA; i++)
-        {
-            cout << t[i].igraci;
-        }*/
+        izlaz << t.osnovano;
+        izlaz << t.ar;
+        izlaz << t.tren;
         return izlaz;
     }
     static int getStatickiBudzet()
@@ -60,7 +54,45 @@ public:
         budzet=a;
         return budzet;
     }
+    void dodaj(Igrac* igr)
+    {
+        igraci.push_back(igr);
+    }
+    void dodajIgraca (Igrac* igrac1)
+    {
+        igraci.push_back(igrac1);
+    }
+    void ispisiInfoTim()
+    {
+        cout<<"Naziv tima: "<< nazivtima <<endl;
+        cout << "Datum osnivanja tima: ";
+        osnovano.ispisidatum();
+        cout << "Arena: ";
+        ar.ispisihala();
+        TimUcinak::ispisiInfoTim();
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            (*it)->predstavise();
+        }
+    }
+    int kolikoJeIgraca()
+    {
+        return igraci.size();
+    }
 
+    bool izbaci(Igrac& igr)
+    {
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            if (igr.getIme()==(*it)->getIme() && igr.getPrezime()==(*it)->getPrezime())
+            {
+                igraci.erase(it);
+                return true;
+            }
+        }
+        return false;
+
+    }
     ///metode za povecavanje i smanjivanje rade na neki nacin, ali zapravo ne rade
     ///s obzirom na to da on ne zna koja je vrednost u txt fajlu
     ///oke ipak rade
@@ -125,20 +157,18 @@ public:
 
     }
     ///ovo su te kao neke metode
-    /*void najboljiigracutimu ()
+    void najboljiigracutimu ()
     {
-        int i;
         int najbolji;
-        najbolji=igraci[0].indexkor;
-        for (i=0; i<BROJ_IGRACA; i++)
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
-            if (najbolji<igraci[i].indexkor)
+            if ((*it)->getIndex()>najbolji)
             {
-                najbolji=igraci[i].indexkor;
+                najbolji=(*it)->getIndex();
             }
         }
         ///ispis te linije iz fajla
-    }*/
+    }
     /*void prosekstarosti ()
     {
         int godine=0;
@@ -162,79 +192,8 @@ public:
         }
         vis=vis/j;
     }*/
-    friend void ispisNazivaTima (const Tim &ti);
-    friend void ispisTabelaTim (const Tim &tt);
 };
 
 int Tim::budzet=0;
-void ispisNazivaTima (const Tim &ti)
-{
-    cout << ti.nazivtima;
-}
-void ispisTabelaTim (const Tim &tt)
-{
-    cout << tt.nazivtima << "\t" << tt.pobede << "\t" << tt.pobedeprod << "\t" << tt.poraziprod << "\t" <<  tt.porazi << "\t" << tt.poenidati << ":" << tt.poeniprimljeni << "\t" ;
-}
-void citajtimfajl(string tim)
-{
-    string linija;
-    ifstream fajl (tim);
-    if (fajl.is_open())
-    {
-        while ( getline (fajl,linija) )
-        {
-            cout << linija << '\n';
-        }
-        fajl.close();
-    }
-
-    else
-        cout << "Neuspesno otvoren fajl";
-
-}
-void citajtimoveucesnike(string timo)
-{
-    int i=1;
-    string linija;
-    ifstream fajl (timo);
-    if (fajl.is_open())
-    {
-        while ( getline (fajl,linija) )
-        {
-            cout << "Opcija " << i << ": ";
-            cout << linija << '\n';
-            i++;
-        }
-        fajl.close();
-    }
-
-    else
-        cout << "Neuspesno otvoren fajl";
-
-}
-
-/*void ispisTima ()
-{
-    cout << "Naziv tima: " << nazivtima << endl;
-    cout << "Datum osnivanja: ";
-///        ispisDatuma (osnovano);
-    cout << endl;
-    cout << "Arena: ";
-///        ispisArena(ar);
-    cout << "Pobede: " << pobede << " / Pobede nakon produzetaka: " << pobedeprod <<" / Porazi: " << porazi << " / Porazi nakon produzetaka: " << poraziprod <<endl;
-    cout << "Bodovi u trenutnoj sezoni: " << bodovi << endl;
-    cout << "Ukupno datih poena: " << poenidati << " / Ukupno primljenih poena: " << poeniprimljeni << endl;
-    cout << "Trener: ";
-///        tren.ispisTrenera ();
-for (int i=0; i<BROJ_IGRACA; i++)
-    {
-        cout << "Igrac: " << endl;
-        igraci[i].ispisIgraca();
-        cout << endl;
-    }*/
-
-
-
-///Tim (string nt, int d2, int m, int g, string na, string da, string naa, int bra, string a, string b,int a1, int b2, int c2, string d, string n): TimUcinak(0, 0, 0, 0,0, 0, 0), nazivtima(nt),osnovano(d2, m, g), ar(na, da, naa, bra),tren(a, b, a1, b2, c2, d, n) {};
 
 #endif // TIM_HPP_INCLUDED
