@@ -16,11 +16,12 @@ class Igrac : public Osoba
 private:
     int dres;
     int visina;
-    Positions pozicije;
+    string pozicije;
     int zarada;
     double indexkor;
 public:
-    Igrac ():Osoba("ime", "prezime", 1, 1, 1, "neshto", "opet neshto"), dres(31), visina (200), pozicije(plejmejker), zarada (2000), indexkor(12.2) {};
+    Igrac ():Osoba("ime", "prezime", 1, 1, 1, "neshto", "opet neshto"), dres(31), visina (200), pozicije("plejmejker"), zarada (2000), indexkor(12.2) {};
+    Igrac (string i, string p, int d, int m, int g, string drz, string n, int dr, int vs, string poz, int zar, double ind): Osoba (i, p, d, m, g, drz, n), dres(dr), visina(vs), pozicije(poz), zarada(zar), indexkor(ind) {};
     string getIme ()
     {
         return ime;
@@ -67,6 +68,15 @@ public:
         cout << "Zarada: " << zarada <<endl;
         cout << "Indeks korisnosti: " << indexkor << endl;
     }
+    int getGod ()
+    {
+        return dat.getG ();
+    }
+    int getVisina ()
+    {
+        return visina;
+    }
+
 };
 
 ///malo duza klasa za informacije o igracima

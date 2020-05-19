@@ -8,7 +8,7 @@ public:
     int mesec;
     int godina;
 public:
-    Datum (int d=1, int m=1, int g=1)
+    Datum (int d, int m, int g)
     {
         dan=d;
         mesec=m;
@@ -22,6 +22,10 @@ public:
     void ispisidatum()
     {
         cout << dan << "." << mesec << "." << godina << "." <<endl;
+    }
+    int getG ()
+    {
+        return godina;
     }
 };
 

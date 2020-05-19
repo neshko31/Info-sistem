@@ -14,7 +14,6 @@ public:
         drzava=drz;
         naziv=naz;
     }
-
     void zameniNazivmesto ()
     {
         if (naziv=="/")
@@ -22,7 +21,6 @@ public:
             naziv="nema informacija";
         }
     }
-
     friend ostream& operator<<(ostream& izlaz, const Mesto& m)
     {
         izlaz<<"Naziv mesta: "<<m.naziv<<endl;

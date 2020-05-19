@@ -14,7 +14,6 @@
 #include "timucinak.hpp"
 #include <fstream>
 #include <sstream>
-#include <vector>
 
 ///klasa koja objedinjuje igrace, trenera i daje ostale info o timu
 ///imamo metodu za ispis svega
@@ -23,7 +22,7 @@
 
 class Tim: public TimUcinak
 {
-    ///ovde sam stavio public jer nemam blage kako da ispis utakmice pristupi ako je protected
+///ovde sam stavio public jer nemam blage kako da ispis utakmice pristupi ako je protected
 public:
     string nazivtima;
     Datum osnovano;
@@ -36,7 +35,10 @@ public:
     {
         budzet+=1000;
     };
-
+    Tim (int a1, int a2, int a3, int a4, int a5, int a6, int a7, string na, int d1, int d2, int d3, string naa, string draa, string mea, int aa, string nt, string pt, int dt1, int dt2, int dt3, string drt, string nat, int aaa): TimUcinak(a1, a2, a3, a4, a5, a6, a7), nazivtima(na), osnovano(d1, d2, d3),ar (naa, draa, mea, aa), tren(nt, pt, dt1, dt2, dt3, drt, nat)
+    {
+        budzet+=aaa;
+    }
     friend ostream& operator<<(ostream& izlaz, const Tim& t)
     {
         izlaz<<"Tim: "<<t.nazivtima<<endl;
@@ -58,10 +60,6 @@ public:
     {
         igraci.push_back(igr);
     }
-    void dodajIgraca (Igrac* igrac1)
-    {
-        igraci.push_back(igrac1);
-    }
     void ispisiInfoTim()
     {
         cout<<"Naziv tima: "<< nazivtima <<endl;
@@ -79,7 +77,6 @@ public:
     {
         return igraci.size();
     }
-
     bool izbaci(Igrac& igr)
     {
         for (auto it=igraci.begin(); it<igraci.end(); it++)
@@ -159,7 +156,7 @@ public:
     ///ovo su te kao neke metode
     void najboljiigracutimu ()
     {
-        int najbolji;
+        int najbolji=0;
         for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
             if ((*it)->getIndex()>najbolji)
@@ -167,31 +164,87 @@ public:
                 najbolji=(*it)->getIndex();
             }
         }
-        ///ispis te linije iz fajla
-    }
-    /*void prosekstarosti ()
-    {
-        int godine=0;
-        int i;
-        for (i=0; i<BROJ_IGRACA; i++)
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
-            godine=2020-igraci[i].dat.godina;
+            if ((*it)->getIndex()==najbolji)
+            {
+                (*it)->predstavise();
+            }
         }
-        int prosek1;
-        prosek1=prosek1/i;
-        cout << prosek1;
     }
-
+    void prosekstarosti ()
+    {
+        int godinee=0;
+        double prosek=0;
+        int n=0;
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            n=(*it)->getGod ();
+            godinee=godinee+(2020-n);
+        }
+        int a=igraci.size();
+        prosek=godinee/a;
+        cout << "Prosek godina ovog tima je: " << prosek << endl;
+    }
     void prosekvisina ()
     {
-        int vis=0;
-        int j=0;
-        for (j=0; j<BROJ_IGRACA; j++)
+        int visina=0;
+        double prosek=0;
+        int n=0;
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
-            vis=igraci[i].visina;
+            n=(*it)->getVisina ();
+            visina=visina+n;
         }
-        vis=vis/j;
-    }*/
+        int a=igraci.size();
+        prosek=visina/a;
+        cout << "Prosek visine ovog tima je: " << prosek << endl;
+    }
+    void najvisiigrac ()
+    {
+        int najvisi=0;
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            if ((*it)->getIndex()>najvisi)
+            {
+                najvisi=(*it)->getVisina();
+            }
+        }
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            if ((*it)->getVisina()==najvisi)
+            {
+                (*it)->predstavise();
+            }
+        }
+    }
+    void sortgodine ()
+    {
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            for (auto ite=igraci.begin(); ite<igraci.end(); ite++)
+            {
+                if ((*ite)->getGod ()<(*ite++)->getGod ())
+                {
+                    swap((*ite), (*ite++));
+                }
+            }
+        }
+    }
+    void sortvisina ()
+    {
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            for (auto ite=igraci.begin(); ite<igraci.end(); ite++)
+            {
+                if ((*ite)->getVisina ()<(*ite++)->getVisina ())
+                {
+                    swap((*ite), (*ite++));
+                }
+            }
+        }
+    }
+
 };
 
 int Tim::budzet=0;

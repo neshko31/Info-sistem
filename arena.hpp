@@ -22,6 +22,7 @@ public:
     }
     void ispisihala ()
     {
+        cout << endl;
         cout << "Naziv hale: " << naziv << endl;
         cout << "Mesto: ";
         mesot.ispisimesto();

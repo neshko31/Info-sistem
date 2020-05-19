@@ -19,15 +19,15 @@ public:
         pobede=p1;
         pobedeprod=p2;
         porazi=p3;
-        porazi=p4;
+        poraziprod=p4;
         bodovi=b;
         poenidati=pd;
         poeniprimljeni=pp;
     }
-        void ispisiInfoTim()
+    void ispisiInfoTim()
     {
-        cout << "Pobede: " << pobede << " /Pobede: " << pobedeprod << endl;
-        cout << "Pobede: " << porazi << " /Pobede: " << poraziprod << endl;
+        cout << "Pobede: " << pobede << " /Pobede prod: " << pobedeprod << endl;
+        cout << "Porazi: " << porazi << " /Porazi prod: " << poraziprod << endl;
         cout << "Bodovi u ovoj sezoni: " << bodovi << endl;
         cout << "Dati poeni: " << poenidati << " /Poeni primljeni: " << poeniprimljeni << endl;
     }

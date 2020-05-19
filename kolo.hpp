@@ -26,6 +26,18 @@ public:
     {
         rednibr=n;
     }
+     void pisiTxt(string nazivFajla, string tekst,char mode='w'){
+                    ofstream fajl;
+                    if (mode=='a'){
+                        fajl.open (nazivFajla, ios_base::app);
+                    }
+                    else{
+                        fajl.open (nazivFajla);}
+                    ///fajl << k22.ime << "," << k22.prezime << "," << k22.kupacIliProd << "," << k22.brojTelefona << "," << k22.korisnickoIme << "," << k22.lozinka <<std::endl;
+                    fajl << tekst << endl;
+                    fajl.close();
+
+}
     friend ostream& operator<<(ostream& izlaz, const Kolo& ko)
     {
         izlaz << "Kolo broj: " << ko.rednibr << endl;
@@ -53,11 +65,7 @@ public:
             (*it)->ispistekme();
         }
     }
-    int kolikoJeKola()
-    {
-        return tekme.size();
-    }
-    void pretrazipoid(int ide)
+    void pretrazipoid(int ide, char mode='a')
     {
         bool pronadjen = false;
         for (auto it=tekme.begin(); it<tekme.end(); it++)
@@ -66,6 +74,17 @@ public:
             {
                 (*it)->ispistekme();
                 pronadjen=true;
+                ofstream fajl;
+                if (mode=='a')
+                {
+                    fajl.open ("baskonia 18.19.txt", ios_base::app);
+                }
+                else
+                {
+                    fajl.open ("baskonia 18.19.txt");
+                }
+                fajl << (*it)->getDan() << "." << (*it)->getMesec() << "." << (*it)->getGodina() << ". " << (*it)->getTim1() << " " << (*it)->getBrpoen1() << " " << (*it)->getTim2() << " " << (*it)->getBrpoen2() << endl;
+                fajl.close();
             }
         }
         if (!pronadjen)
@@ -73,7 +92,7 @@ public:
             cout<<"Nema takve utakmice!"<<endl;
         }
     }
-    void pretrazipotim(string tim)
+    void pretrazipotim(string tim, char mode='a')
     {
         bool pronadjen = false;
         for (auto it=tekme.begin(); it<tekme.end(); it++)
@@ -82,6 +101,17 @@ public:
             {
                 (*it)->ispistekme();
                 pronadjen=true;
+                ofstream fajl;
+                if (mode=='a')
+                {
+                    fajl.open ("baskonia 18.19.txt", ios_base::app);
+                }
+                else
+                {
+                    fajl.open ("baskonia 18.19.txt");
+                }
+                fajl << (*it)->getDan() << "." << (*it)->getMesec() << "." << (*it)->getGodina() << ". " << (*it)->getTim1() << " " << (*it)->getBrpoen1() << " " << (*it)->getTim2() << " " << (*it)->getBrpoen2() << endl;
+                fajl.close();
             }
         }
         if (!pronadjen)
@@ -89,7 +119,20 @@ public:
             cout<<"Nema takve utakmice!"<<endl;
         }
     }
+    bool izbaciutakmicukolo(Utakmica& u)
+    {
+        for (auto it=tekme.begin(); it<tekme.end(); it++){
+            if (u.getBrpoen1()==(*it)->getBrpoen1() && u.getBrpoen2()==(*it)->getBrpoen2()){
+                tekme.erase(it);
+                return true;
+            }
+        }
+        return false;
+    }
+    int getBrKolo ()
+    {
+        return rednibr;
+    }
 };
-
 
 #endif // KOLO_HPP_INCLUDED

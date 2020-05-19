@@ -54,6 +54,18 @@ public:
     {
         return id;
     }
+    int getDan ()
+    {
+        return dan;
+    }
+    int getMesec ()
+    {
+        return mesec;
+    }
+    int getGodina ()
+    {
+        return godina;
+    }
     string getTim1 ()
     {
         return tim1;
@@ -61,6 +73,18 @@ public:
     string getTim2 ()
     {
         return tim2;
+    }
+    int getBrpoen1 ()
+    {
+        return brpojen1;
+    }
+    int getBrpoen2 ()
+    {
+        return brpojen2;
+    }
+    bool getProd ()
+    {
+        return prod;
     }
 };
 
