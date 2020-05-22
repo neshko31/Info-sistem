@@ -30,13 +30,60 @@ public:
     {
         return prezime;
     }
+    int getDan ()
+    {
+        return dat.getD();
+    }
+    int getMesec ()
+    {
+        return dat.getM();
+    }
+    int getGod ()
+    {
+        return dat.getG ();
+    }
+    string getDrzava ()
+    {
+        return mestasce.getDrzava();
+    }
+    string getMesto ()
+    {
+        return mestasce.getMesto();
+    }
+    int getDres ()
+    {
+        return dres;
+    }
+    int getVisina ()
+    {
+        return visina;
+    }
     double getIndex ()
     {
         return indexkor;
     }
-    void zaradaigr ()
+    string getPoz ()
     {
+        return pozicije;
+    }
+    int getZarada ()
+    {
+        return zarada;
+    }
+    void zaradaigr (char mode='a')
+    {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         cout << "Bruto zarada u evrima: " << zarada << endl;
+
+        fajl << "Bruto zarada u evrima: " << zarada << endl;
 
         int pocetna;
         pocetna=zarada;
@@ -44,6 +91,9 @@ public:
         zarada=zarada-(20*zarada/100);
 
         cout << "Neto zarada: " << zarada << endl;
+
+        fajl << "Neto zarada: " << zarada << endl;
+
         zarada=pocetna;
     }
 
@@ -68,14 +118,7 @@ public:
         cout << "Zarada: " << zarada <<endl;
         cout << "Indeks korisnosti: " << indexkor << endl;
     }
-    int getGod ()
-    {
-        return dat.getG ();
-    }
-    int getVisina ()
-    {
-        return visina;
-    }
+
 
 };
 

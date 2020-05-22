@@ -26,7 +26,8 @@ public:
     {
         rednibr=n;
     }
-     void pisiTxt(string nazivFajla, string tekst,char mode='w'){
+    void pisiTxt(string nazivFajla, string tekst,char mode='a')
+    {
                     ofstream fajl;
                     if (mode=='a'){
                         fajl.open (nazivFajla, ios_base::app);
@@ -37,12 +38,13 @@ public:
                     fajl << tekst << endl;
                     fajl.close();
 
-}
+    }
     friend ostream& operator<<(ostream& izlaz, const Kolo& ko)
     {
         izlaz << "Kolo broj: " << ko.rednibr << endl;
-        /*for (auto it=tekme.begin(); it<tekme.end(); it++){
-          (*it)->cout << tekme();
+        /*for (auto it=tekme.begin(); it<tekme.end(); it++)
+        {
+            cout << (*it)->ispistekme();
         }*/
         return izlaz;
     }
@@ -104,13 +106,15 @@ public:
                 ofstream fajl;
                 if (mode=='a')
                 {
-                    fajl.open ("baskonia 18.19.txt", ios_base::app);
+                    fajl.open ("izvestaj.txt", ios_base::app);
                 }
                 else
                 {
-                    fajl.open ("baskonia 18.19.txt");
+                    fajl.open ("izvestaj.txt");
                 }
-                fajl << (*it)->getDan() << "." << (*it)->getMesec() << "." << (*it)->getGodina() << ". " << (*it)->getTim1() << " " << (*it)->getBrpoen1() << " " << (*it)->getTim2() << " " << (*it)->getBrpoen2() << endl;
+                Utakmica u1 ((*it)->getId(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGodina(), (*it)->getTim1(), (*it)->getTim2(), (*it)->getBrpoen1(), (*it)->getBrpoen2(), (*it)->getProd());
+                fajl << u1 << endl;
+                ///fajl << (*it)->getDan() << "." << (*it)->getMesec() << "." << (*it)->getGodina() << ". " << (*it)->getTim1() << " " << (*it)->getBrpoen1() << " " << (*it)->getTim2() << " " << (*it)->getBrpoen2() << endl;
                 fajl.close();
             }
         }

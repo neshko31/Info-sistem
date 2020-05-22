@@ -68,6 +68,8 @@ public:
         cout << "Arena: ";
         ar.ispisihala();
         TimUcinak::ispisiInfoTim();
+        cout << "Igraci:" << endl;
+        cout << "--------------------------" << endl;
         for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
             (*it)->predstavise();
@@ -154,9 +156,18 @@ public:
 
     }
     ///ovo su te kao neke metode
-    void najboljiigracutimu ()
+    void najboljiigracutimu (char mode='a')
     {
-        int najbolji=0;
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
+        double najbolji=0;
         for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
             if ((*it)->getIndex()>najbolji)
@@ -168,12 +179,24 @@ public:
         {
             if ((*it)->getIndex()==najbolji)
             {
+                Igrac i1((*it)->getIme(), (*it)->getPrezime(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGod (), (*it)->getDrzava (), (*it)->getMesto (), (*it)->getDres(), (*it)->getVisina(), (*it)->getPoz(), (*it)->getZarada (),(*it)->getIndex());
+                fajl << i1 << endl;
                 (*it)->predstavise();
             }
         }
+        fajl.close ();
     }
-    void prosekstarosti ()
+    void prosekstarosti (char mode='a')
     {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         int godinee=0;
         double prosek=0;
         int n=0;
@@ -185,9 +208,20 @@ public:
         int a=igraci.size();
         prosek=godinee/a;
         cout << "Prosek godina ovog tima je: " << prosek << endl;
+        fajl << "Prosek godina ovog tima je: " << prosek << endl;
+        fajl.close ();
     }
-    void prosekvisina ()
+    void prosekvisina (char mode='a')
     {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         int visina=0;
         double prosek=0;
         int n=0;
@@ -199,13 +233,24 @@ public:
         int a=igraci.size();
         prosek=visina/a;
         cout << "Prosek visine ovog tima je: " << prosek << endl;
+        fajl << "Prosek visine ovog tima je: " << prosek << endl;
+        fajl.close ();
     }
-    void najvisiigrac ()
+    void najvisiigrac (char mode='a')
     {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         int najvisi=0;
         for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
-            if ((*it)->getIndex()>najvisi)
+            if ((*it)->getVisina()>najvisi)
             {
                 najvisi=(*it)->getVisina();
             }
@@ -214,21 +259,98 @@ public:
         {
             if ((*it)->getVisina()==najvisi)
             {
+                Igrac i1((*it)->getIme(), (*it)->getPrezime(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGod (), (*it)->getDrzava (), (*it)->getMesto (), (*it)->getDres(), (*it)->getVisina(), (*it)->getPoz(), (*it)->getZarada (),(*it)->getIndex());
+                fajl << i1 << endl;
                 (*it)->predstavise();
             }
         }
+        fajl.close ();
     }
-    void sortgodine ()
+    void plateigraca (string imee, char mode='a')
     {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
+        bool pronadjen;
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+            if ((*it)->getIme()==imee)
+            {
+                Igrac i1((*it)->getIme(), (*it)->getPrezime(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGod (), (*it)->getDrzava (), (*it)->getMesto (), (*it)->getDres(), (*it)->getVisina(), (*it)->getPoz(), (*it)->getZarada (),(*it)->getIndex());
+                fajl << i1 << endl;
+                (*it)->zaradaigr();
+                pronadjen=true;
+                fajl.close ();
+            }
+        }
+        if (pronadjen==false)
+        {
+            cout << "Nema takvog igraca!" << endl;
+            fajl << "Nema takvog igraca!" << endl;
+            fajl.close ();
+        }
+    }
+
+
+    ///POKUSAJ DVE METODE
+
+    /*void sortgodine (char mode='a')
+    {
+        vector <Igrac*> slozeniigraci;
+        int god1, god2;
+        int a, b;
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         for (auto it=igraci.begin(); it<igraci.end(); it++)
         {
             for (auto ite=igraci.begin(); ite<igraci.end(); ite++)
             {
-                if ((*ite)->getGod ()<(*ite++)->getGod ())
+                Igrac i1((*it)->getIme(), (*it)->getPrezime(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGod (), (*it)->getDrzava (), (*it)->getMesto (), (*it)->getDres(), (*it)->getVisina(), (*it)->getPoz(), (*it)->getZarada (),(*it)->getIndex());
+                Igrac i2((*ite++)->getIme(), (*ite++)->getPrezime(), (*ite++)->getDan(), (*ite++)->getMesec(), (*ite++)->getGod (), (*ite++)->getDrzava (), (*ite++)->getMesto (), (*ite++)->getDres(), (*ite++)->getVisina(), (*ite++)->getPoz(), (*ite++)->getZarada (),(*ite++)->getIndex());
+                ///Igrac i2((*ite)->getIme(), (*ite)->getPrezime(), (*ite)->getDan(), (*ite)->getMesec(), (*ite)->getGod (), (*ite)->getDrzava (), (*ite)->getMesto (), (*ite)->getDres(), (*ite)->getVisina(), (*ite)->getPoz(), (*ite)->getZarada (),(*ite)->getIndex());
+                a=i1.getGod();
+                b=i2.getGod();
+                a=(*ite)->getGod ();
+                b=(*ite++)->getGod ();
+                god1=2020-a;
+                god2=2020-b;
+                if (i1.getGod()<i2.getGod())
                 {
+                    i1.zaradaigr();
+                }
+                else
+                {
+                    i2.zaradaigr();
+                }
+                if (god1>god2)
+                {
+                    (*ite)->predstavise();
+                    ///Igrac i1((*ite)->getIme(), (*ite)->getPrezime(), (*ite)->getDan(), (*ite)->getMesec(), (*ite)->getGod (), (*ite)->getDrzava (), (*ite)->getMesto (), (*ite)->getDres(), (*ite)->getVisina(), (*ite)->getPoz(), (*ite)->getZarada (),(*ite)->getIndex());
+                    slozeniigraci.push_back (&i1);
+                    Igrac i1((*ite)->getIme(), (*ite)->getPrezime(), (*ite)->getDan(), (*ite)->getMesec(), (*ite)->getGod (), (*ite)->getDrzava (), (*ite)->getMesto (), (*ite)->getDres(), (*ite)->getVisina(), (*ite)->getPoz(), (*ite)->getZarada (),(*ite)->getIndex());
+                    Igrac i2((*ite++)->getIme(), (*ite++)->getPrezime(), (*ite++)->getDan(), (*ite++)->getMesec(), (*ite++)->getGod (), (*ite++)->getDrzava (), (*ite++)->getMesto (), (*ite++)->getDres(), (*ite++)->getVisina(), (*ite++)->getPoz(), (*ite++)->getZarada (),(*ite++)->getIndex());
                     swap((*ite), (*ite++));
                 }
             }
+        }
+        for (auto it=igraci.begin(); it<igraci.end(); it++)
+        {
+                Igrac i1((*it)->getIme(), (*it)->getPrezime(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGod (), (*it)->getDrzava (), (*it)->getMesto (), (*it)->getDres(), (*it)->getVisina(), (*it)->getPoz(), (*it)->getZarada (),(*it)->getIndex());
+                fajl << i1 << endl;
+                (*it)->predstavise();
         }
     }
     void sortvisina ()
@@ -244,7 +366,7 @@ public:
             }
         }
     }
-
+    */
 };
 
 int Tim::budzet=0;

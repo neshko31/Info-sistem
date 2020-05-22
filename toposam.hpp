@@ -38,18 +38,56 @@ public:
             (*it)->ispistekme();
         }
     }
-    bool izbaciutakmicu(Utakmica& u)
+    bool izbaciutakmicu(int idd)
     {
         for (auto it=tekmeplejof.begin(); it<tekmeplejof.end(); it++){
-            if (u.getBrpoen1()==(*it)->getBrpoen1() && u.getBrpoen2()==(*it)->getBrpoen2()){
+            if (idd==(*it)->getId()){
+                cout << "Izbacena je utakmica: " << (*it)->getTim1()<< " / " << (*it)->getTim2() << endl << (*it)->getBrpoen1() << " " << (*it)->getBrpoen2() << endl;
                 tekmeplejof.erase(it);
                 return true;
             }
         }
         return false;
     }
-    void pretrazipotim(string tim)
+    void pretrazipotimtoposam(string tim, char mode='a')
     {
+        if (tim=="GranCanaria" || tim=="Canaria")
+        {
+            tim="Gran Canaria";
+        }
+        if (tim=="Zalgiris" || tim=="ZalgirisKaunas")
+        {
+            tim="Zalgiris Kaunas";
+        }
+        if (tim=="Real" || tim=="RealMadird")
+        {
+            tim="Real Madrid";
+        }
+        if (tim=="Olimpia" || tim=="OlimpiaMilano")
+        {
+            tim="Olimpia Milano";
+        }
+        if (tim=="Anadolu" || tim=="Efes" || tim=="Anadolu Efes")
+        {
+            tim="Anadolu Efes";
+        }
+        if (tim=="Maccabi" || tim=="MaccabiTelAviv")
+        {
+            tim="Maccabi Tel Aviv";
+        }
+        if (tim=="CSKA" || tim=="CSKAMoscow" || tim=="CSKAMoskva")
+        {
+            tim="CSKA Moscow";
+        }
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
         bool pronadjen = false;
         for (auto it=tekmeplejof.begin(); it<tekmeplejof.end(); it++)
         {
@@ -57,11 +95,46 @@ public:
             {
                 (*it)->ispistekme();
                 pronadjen=true;
+                Utakmica u1 ((*it)->getId(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGodina(), (*it)->getTim1(), (*it)->getTim2(), (*it)->getBrpoen1(), (*it)->getBrpoen2(), (*it)->getProd());
+                fajl << u1 << endl;
+                fajl.close();
             }
         }
         if (!pronadjen)
         {
             cout<<"Nema takve utakmice!"<<endl;
+            fajl << "Nema takve utakmice!" << endl;
+            fajl.close ();
+        }
+    }
+    void pretrazipoidtoposam(int ide, char mode='a')
+    {
+        ofstream fajl;
+        if (mode=='a')
+        {
+            fajl.open ("izvestaj.txt", ios_base::app);
+        }
+        else
+        {
+            fajl.open ("izvestaj.txt");
+        }
+        bool pronadjen = false;
+        for (auto it=tekmeplejof.begin(); it<tekmeplejof.end(); it++)
+        {
+            if (ide==(*it)->getId())
+            {
+                (*it)->ispistekme();
+                pronadjen=true;
+                Utakmica u1 ((*it)->getId(), (*it)->getDan(), (*it)->getMesec(), (*it)->getGodina(), (*it)->getTim1(), (*it)->getTim2(), (*it)->getBrpoen1(), (*it)->getBrpoen2(), (*it)->getProd());
+                fajl << u1 << endl;
+                fajl.close();
+            }
+        }
+        if (!pronadjen)
+        {
+            cout<<"Nema takve utakmice!"<<endl;
+            fajl << "Nema takve utakmice!" << endl;
+            fajl.close ();
         }
     }
 };

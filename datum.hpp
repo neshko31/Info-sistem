@@ -27,6 +27,14 @@ public:
     {
         return godina;
     }
+    int getD ()
+    {
+        return dan;
+    }
+    int getM ()
+    {
+        return mesec;
+    }
 };
 
 ///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama

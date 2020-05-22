@@ -32,34 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="anadolu efes 18.19.txt" />
 		<Unit filename="arena.hpp" />
-		<Unit filename="barcelona 18.19.txt" />
-		<Unit filename="baskonia 18.19.txt" />
-		<Unit filename="bayern 18.19.txt" />
-		<Unit filename="buducnost 18.19.txt" />
 		<Unit filename="budzet 18.19.txt" />
-		<Unit filename="cska moskva 18.19.txt" />
-		<Unit filename="darussafaka 18.19.txt" />
 		<Unit filename="datum.hpp" />
-		<Unit filename="fenerbahce 18.19.txt" />
 		<Unit filename="finalfour.hpp" />
-		<Unit filename="gran canaria 18.19.txt" />
 		<Unit filename="igrac.hpp" />
-		<Unit filename="khimki 18.19.txt" />
-		<Unit filename="kola 18.19.txt" />
+		<Unit filename="izvestaj.txt" />
 		<Unit filename="kolo.hpp" />
-		<Unit filename="maccabi tel aviv 18.19.txt" />
 		<Unit filename="main.cpp" />
 		<Unit filename="mesto.hpp" />
-		<Unit filename="olimpia milano 18.19.txt" />
-		<Unit filename="olympiakos 18.19.txt" />
-		<Unit filename="panathinaikos 18.19.txt" />
 		<Unit filename="pozicijautimu.hpp" />
-		<Unit filename="real madrid 18.19.txt" />
-		<Unit filename="regdeo 18.18.txt" />
 		<Unit filename="regularnideo.hpp" />
-		<Unit filename="sezona 18.19.txt" />
 		<Unit filename="sezona.hpp" />
 		<Unit filename="tabela 18.19.txt" />
 		<Unit filename="tabela.hpp" />
@@ -69,7 +52,6 @@
 		<Unit filename="toposam.hpp" />
 		<Unit filename="trener.hpp" />
 		<Unit filename="utakmica.hpp" />
-		<Unit filename="zalgiris 18.19.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />

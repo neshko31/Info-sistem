@@ -31,6 +31,14 @@ public:
     {
         cout << drzava << ", " << naziv << endl;
     }
+    string getDrzava ()
+    {
+        return drzava;
+    }
+    string getMesto ()
+    {
+        return naziv;
+    }
 };
 
 ///prosta klasa sa konstruktorom i ispisom koji se poziva u drugim klasama
