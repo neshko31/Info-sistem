@@ -23,7 +23,7 @@
 class Tim: public TimUcinak
 {
 ///ovde sam stavio public jer nemam blage kako da ispis utakmice pristupi ako je protected
-public:
+protected:
     string nazivtima;
     Datum osnovano;
     Arena ar;

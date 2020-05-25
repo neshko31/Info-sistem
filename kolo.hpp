@@ -18,7 +18,7 @@
 
 class Kolo
 {
-public:
+protected:
     int rednibr;
     vector <Utakmica*> tekme;
 public:

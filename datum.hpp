@@ -3,7 +3,7 @@
 
 class Datum
 {
-public:
+protected:
     int dan;
     int mesec;
     int godina;
